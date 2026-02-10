@@ -1,6 +1,6 @@
 import json
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 
 import db
 
@@ -90,6 +90,11 @@ def search_results():
     return render_template(
         "search.html", query=query, recipes=recipes, tips=tips
     )
+
+
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory(app.static_folder, "robots.txt")
 
 
 if __name__ == "__main__":
