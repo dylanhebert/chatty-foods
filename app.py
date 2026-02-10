@@ -94,6 +94,7 @@ def tips():
             "title": row["title"],
             "category": row["category"],
             "item_count": len(items),
+            "source_type": row["source_type"] or "ai",
         })
     return render_template(
         "tips.html",
@@ -150,6 +151,7 @@ def _clean_recipe(row):
         "notes": row["notes"],
         "source_conversation": row["source_conversation"],
         "created_at": row["created_at"],
+        "source_type": row["source_type"] or "ai",
     }
 
 
@@ -161,6 +163,7 @@ def _clean_tip(row):
         "notes": row["notes"],
         "source_conversation": row["source_conversation"],
         "created_at": row["created_at"],
+        "source_type": row["source_type"] or "ai",
     }
 
 
@@ -174,6 +177,11 @@ def api_upload():
     # Auto-detect type
     is_recipe = "ingredients" in data or "directions" in data
     is_tip = "items" in data
+
+    # Validate source_type if provided
+    valid_source_types = ("ai", "personal", "cookbook")
+    if "source_type" in data and data["source_type"] not in valid_source_types:
+        return jsonify({"error": f"Invalid source_type: must be one of {', '.join(valid_source_types)}"}), 400
 
     if is_recipe and is_tip:
         return jsonify({"error": "Ambiguous: body has both recipe and tip fields"}), 400

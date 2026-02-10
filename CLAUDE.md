@@ -34,7 +34,8 @@ When a conversation is pasted from Claude mobile/desktop:
     "Place skin-side down in a cold cast iron skillet."
   ],
   "notes": "Start skin-side down in a cold pan for crispiest skin.",
-  "source_conversation": "Experimenting_with_chicken_glazes_2026-02-09"
+  "source_conversation": "Experimenting_with_chicken_glazes_2026-02-09",
+  "source_type": "ai"
 }
 ```
 
@@ -42,6 +43,7 @@ When a conversation is pasted from Claude mobile/desktop:
 - **prep_time/cook_time**: integers in minutes
 - **portion_count**: string (e.g., "4 servings", "24 cookies")
 - **source_conversation**: `<Brief_conversation_summary>_<YYYY-MM-DD>` - multiple recipes from the same conversation share this value
+- **source_type**: `ai` (from AI conversation, default), `personal` (own creation), `cookbook` (from a cookbook)
 - **Recipe categories**: chicken, seafood, sushi, dessert, coffee, sauce, breakfast, side, drink, beef, pork, pasta (add new categories if needed)
 
 ## Uploading a Food Tip
@@ -57,7 +59,8 @@ When a conversation is pasted from Claude mobile/desktop:
     {"name": "Teriyaki sauce", "details": "Similar sweetness, slightly different flavor profile"}
   ],
   "notes": "Hoisin is thick and sweet - any substitute should match that consistency.",
-  "source_conversation": "Experimenting_with_chicken_glazes_2026-02-09"
+  "source_conversation": "Experimenting_with_chicken_glazes_2026-02-09",
+  "source_type": "ai"
 }
 ```
 

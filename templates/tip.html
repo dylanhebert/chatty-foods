@@ -3,6 +3,8 @@
 {% block title %}{{ tip.title }} - Chatty Foods{% endblock %}
 {% block nav_tips %}!text-gray-900 dark:!text-white font-semibold{% endblock %}
 
+{% from "_macros.html" import source_icon, source_label %}
+
 {% block content %}
 <div class="mb-4">
     <a href="/tips" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm border border-gray-200 dark:border-gray-700 text-emerald-600 dark:text-emerald-400 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors">&larr; Back to tips</a>
@@ -15,6 +17,7 @@
     {% if date_display %}
     <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">{{ date_display }}</span>
     {% endif %}
+    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">{{ source_icon(tip.source_type, "w-3.5 h-3.5") }} {{ source_label(tip.source_type) }}</span>
 </div>
 
 <div class="space-y-4">
