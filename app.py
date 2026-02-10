@@ -219,5 +219,4 @@ def robots():
 
 if __name__ == "__main__":
     db.init_db()
-    db.sync_all()
     app.run(debug=True)

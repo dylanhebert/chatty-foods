@@ -5,7 +5,7 @@ A minimal web app for browsing recipes and food tips extracted from AI cooking c
 ## Tech Stack
 
 - **Flask** - Python web framework
-- **SQLite** - Local database (auto-synced from JSON files on startup)
+- **SQLite** - Local database
 - **Tailwind CSS** - Styling via CDN (dark/light mode)
 
 ## Setup
@@ -28,9 +28,7 @@ Visit `http://localhost:5000`
 
 ## Adding Data
 
-### Via the API (preferred)
-
-Upload recipes and tips directly to the running app — no restart needed:
+Upload recipes and tips via the API:
 
 ```bash
 curl -X POST http://localhost:5000/api/upload \
@@ -46,10 +44,6 @@ API_TOKEN=your-secret-token-here
 ```
 
 See `CLAUDE.md` for the full JSON schema.
-
-### Via JSON files
-
-Drop files into `data/recipe_cards/` or `data/food_tips/` and restart the app. The database syncs automatically on startup.
 
 ## API
 

@@ -1,6 +1,6 @@
 # Chatty Foods
 
-This project stores recipe cards and food tips as JSON files. Conversations happen on Claude mobile while cooking, then get pasted here to be extracted into structured data.
+This project stores recipe cards and food tips in a SQLite database, served by a Flask web app. Conversations happen on Claude mobile while cooking, then get pasted here to be extracted and uploaded via the API.
 
 ## Ingesting a Conversation
 
@@ -9,14 +9,14 @@ When a conversation is pasted from Claude mobile/desktop:
 1. Read through the entire conversation
 2. Identify all recipes discussed (ingredients, directions, cook times, etc.)
 3. Identify all food tips (pairings, storage advice, substitutions, techniques)
-4. Create the appropriate JSON files in `data/recipe_cards/` and/or `data/food_tips/`
-5. If a conversation has multiple recipes, create separate files for each
+4. Upload each recipe and tip via `POST /api/upload` (see schemas below)
+5. If a conversation has multiple recipes, upload each one separately
 6. Skip general chit-chat - only extract actionable recipes and tips
-7. Report what was created for review
+7. Report what was uploaded for review
 
-## Adding a Recipe Card
+## Uploading a Recipe Card
 
-Write to `data/recipe_cards/` using this format:
+`POST /api/upload` with this JSON body:
 
 ```json
 {
@@ -38,16 +38,15 @@ Write to `data/recipe_cards/` using this format:
 }
 ```
 
-- **File naming**: `lowercase_underscored_recipe_name.json` (based on the recipe title, not the conversation)
 - **title**: Descriptive of the specific recipe, not the conversation topic
 - **prep_time/cook_time**: integers in minutes
 - **portion_count**: string (e.g., "4 servings", "24 cookies")
 - **source_conversation**: `<Brief_conversation_summary>_<YYYY-MM-DD>` - multiple recipes from the same conversation share this value
 - **Recipe categories**: chicken, seafood, sushi, dessert, coffee, sauce, breakfast, side, drink, beef, pork, pasta (add new categories if needed)
 
-## Adding a Food Tip
+## Uploading a Food Tip
 
-Write to `data/food_tips/` using this format:
+`POST /api/upload` with this JSON body:
 
 ```json
 {
@@ -66,10 +65,20 @@ Write to `data/food_tips/` using this format:
 - **source_conversation**: Same format as recipe cards
 - **Tip categories**: pairing, storage, substitution, technique, tip
 
+## Authentication
+
+All API requests require a Bearer token:
+
+```
+Authorization: Bearer <API_TOKEN>
+```
+
+The token is set via the `API_TOKEN` environment variable (`.env` file locally, systemd service on the server).
+
 <!-- Reference for humans, not instructions for Claude -->
 ## Workflow Reference
 
 1. **Cook** - Chat with Claude on mobile (Recipes project) while prepping/cooking
 2. **Sync** - Open the same conversation on Claude desktop (it syncs automatically)
 3. **Extract** - Copy the conversation, paste it into Claude Code in this repo, optionally add "extract recipes from this"
-4. **Review** - Claude creates the JSON files and reports what was saved
+4. **Review** - Claude uploads via the API and reports what was saved
