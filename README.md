@@ -37,13 +37,21 @@ curl -X POST http://localhost:5000/api/upload \
   -d '{"title": "Crispy Chicken", "category": "chicken", "ingredients": [...], "directions": [...]}'
 ```
 
-Requires an `API_TOKEN` environment variable. Create a `.env` file in the project root:
+Requires two environment variables. Create a `.env` file in the project root:
 
 ```
 API_TOKEN=your-secret-token-here
+SECRET_KEY=your-secret-key-here
 ```
 
+- `API_TOKEN` — Bearer token for API requests, also the admin login password
+- `SECRET_KEY` — Used by Flask to sign session cookies (generate with `python -c "import secrets; print(secrets.token_hex(32))"`)
+
 See `CLAUDE.md` for the full JSON schema.
+
+## Admin Editing
+
+Log in at `/login` with the admin password (`API_TOKEN`) to edit recipes and tips directly from their detail pages. Sessions persist for 30 days.
 
 ## API
 

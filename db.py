@@ -222,6 +222,51 @@ def insert_tip(data):
     return row_id
 
 
+def update_recipe(recipe_id, data):
+    conn = get_db()
+    conn.execute(
+        "UPDATE recipe_cards SET title=?, category=?, prep_time=?, cook_time=?, "
+        "portion_count=?, ingredients=?, directions=?, notes=?, source_type=?, "
+        "source_conversation=?, highlight=? WHERE id=?",
+        (
+            data["title"],
+            data["category"],
+            data.get("prep_time", 0),
+            data.get("cook_time", 0),
+            data.get("portion_count", ""),
+            json.dumps(data.get("ingredients", [])),
+            json.dumps(data.get("directions", [])),
+            data.get("notes", ""),
+            data.get("source_type", "ai"),
+            data.get("source_conversation", ""),
+            data.get("highlight", 0),
+            recipe_id,
+        ),
+    )
+    conn.commit()
+    conn.close()
+
+
+def update_tip(tip_id, data):
+    conn = get_db()
+    conn.execute(
+        "UPDATE food_tips SET title=?, category=?, items=?, notes=?, source_type=?, "
+        "source_conversation=?, highlight=? WHERE id=?",
+        (
+            data["title"],
+            data["category"],
+            json.dumps(data.get("items", [])),
+            data.get("notes", ""),
+            data.get("source_type", "ai"),
+            data.get("source_conversation", ""),
+            data.get("highlight", 0),
+            tip_id,
+        ),
+    )
+    conn.commit()
+    conn.close()
+
+
 def export_all():
     conn = get_db()
     recipes = conn.execute(

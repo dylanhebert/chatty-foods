@@ -1,18 +1,35 @@
+import hmac
 import json
 import os
-from datetime import datetime
+import secrets
+from datetime import datetime, timedelta
 from functools import wraps
 
 from dotenv import load_dotenv
-from flask import Flask, jsonify, render_template, request, send_from_directory
+from flask import (
+    Flask, jsonify, redirect, render_template, request,
+    send_from_directory, session, url_for,
+)
 
 import db
 
 load_dotenv()
 
 app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY", "")
+app.permanent_session_lifetime = timedelta(days=30)
 
 API_TOKEN = os.environ.get("API_TOKEN", "")
+
+RECIPE_CATEGORIES = sorted([
+    "chicken", "seafood", "sushi", "dessert", "coffee", "sauce",
+    "breakfast", "side", "drink", "beef", "pork", "pasta",
+])
+TIP_CATEGORIES = sorted(["pairing", "storage", "substitution", "technique", "tip"])
+SOURCE_TYPES = [("ai", "AI"), ("personal", "Personal"), ("cookbook", "Cookbook")]
+
+
+# --- Auth decorators ---
 
 
 def require_token(f):
@@ -25,6 +42,67 @@ def require_token(f):
             return jsonify({"error": "Unauthorized"}), 401
         return f(*args, **kwargs)
     return decorated
+
+
+def require_admin(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        if not session.get("is_admin"):
+            return redirect(url_for("login"))
+        return f(*args, **kwargs)
+    return decorated
+
+
+def check_csrf(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        if request.method == "POST":
+            if request.form.get("csrf_token") != session.get("csrf_token"):
+                return "Invalid request", 403
+        return f(*args, **kwargs)
+    return decorated
+
+
+@app.before_request
+def ensure_csrf_token():
+    if "csrf_token" not in session:
+        session["csrf_token"] = secrets.token_hex(32)
+
+
+@app.context_processor
+def inject_globals():
+    return {
+        "is_admin": session.get("is_admin", False),
+        "csrf_token": session.get("csrf_token", ""),
+    }
+
+
+# --- Auth routes ---
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if session.get("is_admin"):
+        return redirect(url_for("index"))
+    if request.method == "GET":
+        return render_template("login.html")
+    password = request.form.get("password", "")
+    if not API_TOKEN:
+        return render_template("login.html", error="Admin login not configured")
+    if hmac.compare_digest(password, API_TOKEN):
+        session.permanent = True
+        session["is_admin"] = True
+        return redirect(url_for("index"))
+    return render_template("login.html", error="Incorrect password")
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for("index"))
+
+
+# --- Page routes ---
 
 
 @app.route("/")
@@ -89,7 +167,6 @@ def tips():
     category = request.args.get("category")
     rows = db.get_tips(category)
     categories = db.get_tip_categories()
-    # Add item count to each row
     tips_with_counts = []
     for row in rows:
         items = json.loads(row["items"])
@@ -139,6 +216,99 @@ def about():
 @app.route("/api-docs")
 def api_docs():
     return render_template("api.html")
+
+
+# --- Edit routes ---
+
+
+@app.route("/recipes/<int:recipe_id>/edit", methods=["GET", "POST"])
+@require_admin
+@check_csrf
+def edit_recipe(recipe_id):
+    row = db.get_recipe(recipe_id)
+    if not row:
+        return "Recipe not found", 404
+
+    if request.method == "GET":
+        ingredients = json.loads(row["ingredients"]) if row["ingredients"] else []
+        directions = json.loads(row["directions"]) if row["directions"] else []
+        return render_template(
+            "edit_recipe.html",
+            recipe=row,
+            ingredients=ingredients,
+            directions=directions,
+            recipe_categories=RECIPE_CATEGORIES,
+            source_types=SOURCE_TYPES,
+        )
+
+    # POST — collect form data
+    data = {
+        "title": request.form.get("title", "").strip(),
+        "category": request.form.get("category", ""),
+        "prep_time": int(request.form.get("prep_time") or 0),
+        "cook_time": int(request.form.get("cook_time") or 0),
+        "portion_count": request.form.get("portion_count", "").strip(),
+        "notes": request.form.get("notes", "").strip(),
+        "source_type": request.form.get("source_type", "ai"),
+        "source_conversation": request.form.get("source_conversation", "").strip(),
+        "highlight": 1 if request.form.get("highlight") else 0,
+    }
+
+    # Collect ingredient rows
+    names = request.form.getlist("ingredient_name")
+    amounts = request.form.getlist("ingredient_amount")
+    data["ingredients"] = [
+        {"name": n.strip(), "amount": a.strip()}
+        for n, a in zip(names, amounts) if n.strip()
+    ]
+
+    # Collect direction steps
+    data["directions"] = [
+        s.strip() for s in request.form.getlist("direction") if s.strip()
+    ]
+
+    db.update_recipe(recipe_id, data)
+    return redirect(url_for("recipe", recipe_id=recipe_id))
+
+
+@app.route("/tips/<int:tip_id>/edit", methods=["GET", "POST"])
+@require_admin
+@check_csrf
+def edit_tip(tip_id):
+    row = db.get_tip(tip_id)
+    if not row:
+        return "Tip not found", 404
+
+    if request.method == "GET":
+        items = json.loads(row["items"]) if row["items"] else []
+        return render_template(
+            "edit_tip.html",
+            tip=row,
+            items=items,
+            tip_categories=TIP_CATEGORIES,
+            source_types=SOURCE_TYPES,
+        )
+
+    # POST — collect form data
+    data = {
+        "title": request.form.get("title", "").strip(),
+        "category": request.form.get("category", ""),
+        "notes": request.form.get("notes", "").strip(),
+        "source_type": request.form.get("source_type", "ai"),
+        "source_conversation": request.form.get("source_conversation", "").strip(),
+        "highlight": 1 if request.form.get("highlight") else 0,
+    }
+
+    # Collect item rows
+    names = request.form.getlist("item_name")
+    details = request.form.getlist("item_details")
+    data["items"] = [
+        {"name": n.strip(), "details": d.strip()}
+        for n, d in zip(names, details) if n.strip()
+    ]
+
+    db.update_tip(tip_id, data)
+    return redirect(url_for("tip", tip_id=tip_id))
 
 
 # --- API routes ---

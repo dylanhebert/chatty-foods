@@ -4,6 +4,5 @@ __pycache__/
 *.pyc
 .env
 .claude/
-DEPLOYMENT.md
-API.md
+docs/
 zzexclude/
