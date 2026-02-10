@@ -14,32 +14,76 @@ def get_db():
     return conn
 
 
+_RECIPE_SCHEMA = """
+    CREATE TABLE IF NOT EXISTS recipe_cards (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        file_path TEXT UNIQUE,
+        file_hash TEXT,
+        title TEXT NOT NULL,
+        category TEXT NOT NULL,
+        prep_time INTEGER,
+        cook_time INTEGER,
+        portion_count TEXT,
+        ingredients TEXT,
+        directions TEXT,
+        notes TEXT,
+        source_conversation TEXT
+    )
+"""
+
+_TIP_SCHEMA = """
+    CREATE TABLE IF NOT EXISTS food_tips (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        file_path TEXT UNIQUE,
+        file_hash TEXT,
+        title TEXT NOT NULL,
+        category TEXT NOT NULL,
+        items TEXT,
+        notes TEXT,
+        source_conversation TEXT
+    )
+"""
+
+
+def _needs_migration(conn, table, column):
+    """Check if a column has a NOT NULL constraint that needs relaxing."""
+    rows = conn.execute(f"PRAGMA table_info({table})").fetchall()
+    for row in rows:
+        if row["name"] == column:
+            return row["notnull"] == 1
+    return False
+
+
+def _migrate_table(conn, table, new_schema):
+    """Recreate a table with a new schema, preserving all data."""
+    conn.execute(f"ALTER TABLE {table} RENAME TO {table}_old")
+    conn.execute(new_schema)
+    # Copy all columns that exist in both old and new tables
+    old_cols = [r["name"] for r in conn.execute(f"PRAGMA table_info({table}_old)").fetchall()]
+    new_cols = [r["name"] for r in conn.execute(f"PRAGMA table_info({table})").fetchall()]
+    shared = [c for c in old_cols if c in new_cols]
+    cols = ", ".join(shared)
+    conn.execute(f"INSERT INTO {table} ({cols}) SELECT {cols} FROM {table}_old")
+    conn.execute(f"DROP TABLE {table}_old")
+
+
 def init_db():
     conn = get_db()
-    conn.executescript("""
-        CREATE TABLE IF NOT EXISTS recipe_cards (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            file_path TEXT UNIQUE NOT NULL,
-            file_hash TEXT NOT NULL,
-            title TEXT NOT NULL,
-            category TEXT NOT NULL,
-            prep_time INTEGER,
-            cook_time INTEGER,
-            portion_count TEXT,
-            ingredients TEXT,
-            directions TEXT,
-            notes TEXT
-        );
-        CREATE TABLE IF NOT EXISTS food_tips (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            file_path TEXT UNIQUE NOT NULL,
-            file_hash TEXT NOT NULL,
-            title TEXT NOT NULL,
-            category TEXT NOT NULL,
-            items TEXT,
-            notes TEXT
-        );
-    """)
+    # Check if migration is needed (existing DB with NOT NULL on file_path)
+    tables = [r["name"] for r in conn.execute(
+        "SELECT name FROM sqlite_master WHERE type='table'"
+    ).fetchall()]
+
+    if "recipe_cards" in tables and _needs_migration(conn, "recipe_cards", "file_path"):
+        _migrate_table(conn, "recipe_cards", _RECIPE_SCHEMA)
+    else:
+        conn.execute(_RECIPE_SCHEMA)
+
+    if "food_tips" in tables and _needs_migration(conn, "food_tips", "file_path"):
+        _migrate_table(conn, "food_tips", _TIP_SCHEMA)
+    else:
+        conn.execute(_TIP_SCHEMA)
+
     conn.commit()
     conn.close()
 
@@ -111,6 +155,7 @@ def _parse_recipe(data, rel_path, fhash):
         "ingredients": json.dumps(data.get("ingredients", [])),
         "directions": json.dumps(data.get("directions", [])),
         "notes": data.get("notes", ""),
+        "source_conversation": data.get("source_conversation"),
     }
 
 
@@ -122,6 +167,7 @@ def _parse_tip(data, rel_path, fhash):
         "category": data.get("category", ""),
         "items": json.dumps(data.get("items", [])),
         "notes": data.get("notes", ""),
+        "source_conversation": data.get("source_conversation"),
     }
 
 
@@ -211,6 +257,89 @@ def get_counts():
     tip_count = conn.execute("SELECT COUNT(*) FROM food_tips").fetchone()[0]
     conn.close()
     return recipe_count, tip_count
+
+
+def insert_recipe(data):
+    conn = get_db()
+    conn.execute(
+        "INSERT INTO recipe_cards (title, category, prep_time, cook_time, "
+        "portion_count, ingredients, directions, notes, source_conversation) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        (
+            data["title"],
+            data["category"],
+            data.get("prep_time", 0),
+            data.get("cook_time", 0),
+            data.get("portion_count", ""),
+            json.dumps(data.get("ingredients", [])),
+            json.dumps(data.get("directions", [])),
+            data.get("notes", ""),
+            data.get("source_conversation"),
+        ),
+    )
+    row_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+    conn.commit()
+    conn.close()
+    return row_id
+
+
+def insert_tip(data):
+    conn = get_db()
+    conn.execute(
+        "INSERT INTO food_tips (title, category, items, notes, source_conversation) "
+        "VALUES (?, ?, ?, ?, ?)",
+        (
+            data["title"],
+            data["category"],
+            json.dumps(data.get("items", [])),
+            data.get("notes", ""),
+            data.get("source_conversation"),
+        ),
+    )
+    row_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+    conn.commit()
+    conn.close()
+    return row_id
+
+
+def export_all():
+    conn = get_db()
+    recipes = conn.execute(
+        "SELECT title, category, prep_time, cook_time, portion_count, "
+        "ingredients, directions, notes, source_conversation "
+        "FROM recipe_cards ORDER BY title"
+    ).fetchall()
+    tips = conn.execute(
+        "SELECT title, category, items, notes, source_conversation "
+        "FROM food_tips ORDER BY title"
+    ).fetchall()
+    conn.close()
+
+    recipe_list = []
+    for r in recipes:
+        recipe_list.append({
+            "title": r["title"],
+            "category": r["category"],
+            "prep_time": r["prep_time"],
+            "cook_time": r["cook_time"],
+            "portion_count": r["portion_count"],
+            "ingredients": json.loads(r["ingredients"]) if r["ingredients"] else [],
+            "directions": json.loads(r["directions"]) if r["directions"] else [],
+            "notes": r["notes"],
+            "source_conversation": r["source_conversation"],
+        })
+
+    tip_list = []
+    for t in tips:
+        tip_list.append({
+            "title": t["title"],
+            "category": t["category"],
+            "items": json.loads(t["items"]) if t["items"] else [],
+            "notes": t["notes"],
+            "source_conversation": t["source_conversation"],
+        })
+
+    return recipe_list, tip_list
 
 
 def search(query):

@@ -5,7 +5,7 @@ A minimal web app for browsing recipes and food tips extracted from AI cooking c
 ## Tech Stack
 
 - **Flask** - Python web framework
-- **SQLite** - Local database (auto-synced from JSON files)
+- **SQLite** - Local database (auto-synced from JSON files on startup)
 - **Tailwind CSS** - Styling via CDN (dark/light mode)
 
 ## Setup
@@ -28,9 +28,36 @@ Visit `http://localhost:5000`
 
 ## Adding Data
 
-Drop JSON files into the appropriate folder:
+### Via the API (preferred)
 
-- `data/recipe_cards/` - Recipe files
-- `data/food_tips/` - Tip files
+Upload recipes and tips directly to the running app — no restart needed:
 
-Restart the app and the new data will appear automatically. See `CLAUDE.md` for JSON schema details.
+```bash
+curl -X POST http://localhost:5000/api/upload \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer your-token" \
+  -d '{"title": "Crispy Chicken", "category": "chicken", "ingredients": [...], "directions": [...]}'
+```
+
+Requires an `API_TOKEN` environment variable. Create a `.env` file in the project root:
+
+```
+API_TOKEN=your-secret-token-here
+```
+
+See `CLAUDE.md` for the full JSON schema.
+
+### Via JSON files
+
+Drop files into `data/recipe_cards/` or `data/food_tips/` and restart the app. The database syncs automatically on startup.
+
+## API
+
+Token-protected endpoints for uploading, reading, and exporting data:
+
+- `POST /api/upload` — Add a recipe or tip (auto-detected from fields)
+- `GET /api/recipes` — List all recipes
+- `GET /api/recipes/<id>` — Get a single recipe
+- `GET /api/tips` — List all tips
+- `GET /api/tips/<id>` — Get a single tip
+- `GET /api/export` — Export the full database as JSON
