@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}About - Chatty Foods{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8">About Chatty Foods</h1>
+
+    <div class="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <h2 class="text-lg font-semibold text-gray-900 dark:text-white">The problem</h2>
+        <p>
+            I use AI a lot in the kitchen. It helps me come up with recipes based on whatever ingredients
+            I have on hand, suggests pairings, walks me through techniques, and generally makes cooking
+            more fun. Over time, I built up a solid collection of recipes and tips through those conversations.
+        </p>
+        <p>
+            The problem is that all of that useful information gets buried. Even with a dedicated project
+            in the app, good recipes and tips end up scattered across dozens of conversations. Finding that
+            one chicken thigh glaze from three weeks ago means scrolling through a lot of unrelated chatter.
+        </p>
+        <p>
+            I wanted a clean way to reference everything I've cooked and learned without digging through
+            old conversations, and an easy way to keep adding to it.
+        </p>
+
+        <h2 class="text-lg font-semibold text-gray-900 dark:text-white pt-2">The process</h2>
+        <p>
+            The idea for how to actually pull this off came to me in the shower. The steps ended up being
+            pretty straightforward:
+        </p>
+        <ol class="list-decimal list-inside space-y-2 pl-1">
+            <li>Export my ChatGPT conversation data</li>
+            <li>Write a script to organize the raw export into individual conversation files</li>
+            <li>Have Claude read through all of them and flag the ones related to food</li>
+            <li>From those food conversations, extract structured recipe cards and food tips</li>
+            <li>Use that structured data as the foundation for this site</li>
+        </ol>
+        <p>
+            Now when I cook something new with AI, I just drop the conversation in and the recipes and
+            tips get added to the collection.
+        </p>
+    </div>
+</div>
+{% endblock %}

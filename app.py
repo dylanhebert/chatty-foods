@@ -92,6 +92,11 @@ def search_results():
     )
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
 @app.route("/robots.txt")
 def robots():
     return send_from_directory(app.static_folder, "robots.txt")
