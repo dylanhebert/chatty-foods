@@ -116,6 +116,11 @@ def about():
     return render_template("about.html")
 
 
+@app.route("/api-docs")
+def api_docs():
+    return render_template("api.html")
+
+
 # --- API routes ---
 
 

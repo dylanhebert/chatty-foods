@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}API - Chatty Foods{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8">API</h1>
+
+    <div class="space-y-8 text-gray-700 dark:text-gray-300 leading-relaxed">
+
+        <section>
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Authentication</h2>
+            <p>All endpoints require a Bearer token in the <code class="text-sm bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">Authorization</code> header:</p>
+            <pre class="mt-3 bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-3 text-sm overflow-x-auto"><code>Authorization: Bearer &lt;API_TOKEN&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Endpoints</h2>
+
+            <div class="space-y-6">
+                <!-- Upload -->
+                <div class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
+                    <div class="bg-gray-100 dark:bg-gray-800 px-4 py-2.5 flex items-center gap-2">
+                        <span class="text-xs font-bold bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 px-2 py-0.5 rounded">POST</span>
+                        <code class="text-sm font-medium">/api/upload</code>
+                    </div>
+                    <div class="px-4 py-3 text-sm space-y-2">
+                        <p>Add a recipe or tip. The type is auto-detected from the request body: if it contains <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-xs">ingredients</code> or <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-xs">directions</code> it's a recipe; if it contains <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-xs">items</code> it's a tip.</p>
+                        <p>Returns <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-xs">201</code> with the new record's type and id on success.</p>
+                    </div>
+                </div>
+
+                <!-- List recipes -->
+                <div class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
+                    <div class="bg-gray-100 dark:bg-gray-800 px-4 py-2.5 flex items-center gap-2">
+                        <span class="text-xs font-bold bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 px-2 py-0.5 rounded">GET</span>
+                        <code class="text-sm font-medium">/api/recipes</code>
+                    </div>
+                    <div class="px-4 py-3 text-sm">
+                        <p>Returns all recipes as a JSON array.</p>
+                    </div>
+                </div>
+
+                <!-- Single recipe -->
+                <div class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
+                    <div class="bg-gray-100 dark:bg-gray-800 px-4 py-2.5 flex items-center gap-2">
+                        <span class="text-xs font-bold bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 px-2 py-0.5 rounded">GET</span>
+                        <code class="text-sm font-medium">/api/recipes/&lt;id&gt;</code>
+                    </div>
+                    <div class="px-4 py-3 text-sm">
+                        <p>Returns a single recipe by id.</p>
+                    </div>
+                </div>
+
+                <!-- List tips -->
+                <div class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
+                    <div class="bg-gray-100 dark:bg-gray-800 px-4 py-2.5 flex items-center gap-2">
+                        <span class="text-xs font-bold bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 px-2 py-0.5 rounded">GET</span>
+                        <code class="text-sm font-medium">/api/tips</code>
+                    </div>
+                    <div class="px-4 py-3 text-sm">
+                        <p>Returns all tips as a JSON array.</p>
+                    </div>
+                </div>
+
+                <!-- Single tip -->
+                <div class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
+                    <div class="bg-gray-100 dark:bg-gray-800 px-4 py-2.5 flex items-center gap-2">
+                        <span class="text-xs font-bold bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 px-2 py-0.5 rounded">GET</span>
+                        <code class="text-sm font-medium">/api/tips/&lt;id&gt;</code>
+                    </div>
+                    <div class="px-4 py-3 text-sm">
+                        <p>Returns a single tip by id.</p>
+                    </div>
+                </div>
+
+                <!-- Export -->
+                <div class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
+                    <div class="bg-gray-100 dark:bg-gray-800 px-4 py-2.5 flex items-center gap-2">
+                        <span class="text-xs font-bold bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 px-2 py-0.5 rounded">GET</span>
+                        <code class="text-sm font-medium">/api/export</code>
+                    </div>
+                    <div class="px-4 py-3 text-sm">
+                        <p>Export the full database as JSON. Returns an object with <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-xs">recipes</code> and <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-xs">tips</code> arrays.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Schemas</h2>
+
+            <h3 class="text-sm font-semibold text-gray-900 dark:text-white mt-4 mb-2">Recipe</h3>
+            <pre class="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-3 text-sm overflow-x-auto"><code>{
+  "title": "Crispy Chicken Thighs",
+  "category": "chicken",
+  "prep_time": 5,
+  "cook_time": 25,
+  "portion_count": "4 servings",
+  "ingredients": [
+    {"name": "chicken thighs", "amount": "4"},
+    {"name": "salt", "amount": "1 tsp"}
+  ],
+  "directions": [
+    "Pat chicken dry and season.",
+    "Place skin-side down in a cold skillet."
+  ],
+  "notes": "Start skin-side down for crispiest skin."
+}</code></pre>
+            <div class="mt-2 text-sm space-y-1">
+                <p><strong class="text-gray-900 dark:text-white">title</strong> <span class="text-gray-500 dark:text-gray-400">(required)</span> — descriptive name for the recipe</p>
+                <p><strong class="text-gray-900 dark:text-white">category</strong> <span class="text-gray-500 dark:text-gray-400">(required)</span> — chicken, seafood, sushi, dessert, coffee, sauce, breakfast, side, drink, beef, pork, pasta</p>
+                <p><strong class="text-gray-900 dark:text-white">ingredients</strong> <span class="text-gray-500 dark:text-gray-400">(required)</span> — array of objects with <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-xs">name</code> and <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-xs">amount</code></p>
+                <p><strong class="text-gray-900 dark:text-white">directions</strong> <span class="text-gray-500 dark:text-gray-400">(required)</span> — array of step strings</p>
+                <p><strong class="text-gray-900 dark:text-white">prep_time</strong> / <strong class="text-gray-900 dark:text-white">cook_time</strong> — integers in minutes</p>
+                <p><strong class="text-gray-900 dark:text-white">portion_count</strong> — string (e.g., "4 servings", "24 cookies")</p>
+                <p><strong class="text-gray-900 dark:text-white">notes</strong> — additional context or tips</p>
+            </div>
+
+            <h3 class="text-sm font-semibold text-gray-900 dark:text-white mt-6 mb-2">Tip</h3>
+            <pre class="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-3 text-sm overflow-x-auto"><code>{
+  "title": "Hoisin Sauce Substitutes",
+  "category": "substitution",
+  "items": [
+    {"name": "Soy sauce + peanut butter + honey", "details": "Mix equal parts"},
+    {"name": "Teriyaki sauce", "details": "Similar sweetness"}
+  ],
+  "notes": "Match the thick, sweet consistency of hoisin."
+}</code></pre>
+            <div class="mt-2 text-sm space-y-1">
+                <p><strong class="text-gray-900 dark:text-white">title</strong> <span class="text-gray-500 dark:text-gray-400">(required)</span> — descriptive name for the tip</p>
+                <p><strong class="text-gray-900 dark:text-white">category</strong> <span class="text-gray-500 dark:text-gray-400">(required)</span> — pairing, storage, substitution, technique, tip</p>
+                <p><strong class="text-gray-900 dark:text-white">items</strong> <span class="text-gray-500 dark:text-gray-400">(required)</span> — array of objects with <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-xs">name</code> and <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-xs">details</code></p>
+                <p><strong class="text-gray-900 dark:text-white">notes</strong> — additional context</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Example</h2>
+            <pre class="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-3 text-sm overflow-x-auto"><code>curl -X POST http://localhost:5000/api/upload \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer your-token" \
+  -d '{
+    "title": "Crispy Chicken Thighs",
+    "category": "chicken",
+    "ingredients": [{"name": "chicken thighs", "amount": "4"}],
+    "directions": ["Pat dry.", "Season.", "Cook."]
+  }'</code></pre>
+        </section>
+    </div>
+</div>
+{% endblock %}
