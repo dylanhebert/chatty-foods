@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 from functools import wraps
 
 from dotenv import load_dotenv
@@ -53,6 +54,16 @@ def recipes():
     )
 
 
+def _format_date(dt_string):
+    if not dt_string:
+        return None
+    try:
+        dt = datetime.strptime(dt_string, "%Y-%m-%d %H:%M:%S")
+        return dt.strftime("%b %d, %Y").replace(" 0", " ")
+    except ValueError:
+        return None
+
+
 @app.route("/recipes/<int:recipe_id>")
 def recipe(recipe_id):
     row = db.get_recipe(recipe_id)
@@ -65,6 +76,7 @@ def recipe(recipe_id):
         recipe=row,
         ingredients=ingredients,
         directions=directions,
+        date_display=_format_date(row["created_at"]),
     )
 
 
@@ -97,7 +109,9 @@ def tip(tip_id):
     if not row:
         return "Tip not found", 404
     items = json.loads(row["items"])
-    return render_template("tip.html", tip=row, items=items)
+    return render_template(
+        "tip.html", tip=row, items=items, date_display=_format_date(row["created_at"])
+    )
 
 
 @app.route("/search")
@@ -135,6 +149,7 @@ def _clean_recipe(row):
         "directions": json.loads(row["directions"]) if row["directions"] else [],
         "notes": row["notes"],
         "source_conversation": row["source_conversation"],
+        "created_at": row["created_at"],
     }
 
 
@@ -145,6 +160,7 @@ def _clean_tip(row):
         "items": json.loads(row["items"]) if row["items"] else [],
         "notes": row["notes"],
         "source_conversation": row["source_conversation"],
+        "created_at": row["created_at"],
     }
 
 

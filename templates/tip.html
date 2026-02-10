@@ -10,8 +10,11 @@
 
 <h1 class="text-3xl font-bold mb-4">{{ tip.title }}</h1>
 
-<div class="mb-8">
+<div class="flex flex-wrap gap-3 mb-8">
     <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 capitalize">{{ tip.category }}</span>
+    {% if date_display %}
+    <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">{{ date_display }}</span>
+    {% endif %}
 </div>
 
 <div class="space-y-4">

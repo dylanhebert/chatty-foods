@@ -1,6 +1,7 @@
 import json
 import os
 import sqlite3
+from datetime import datetime, timezone
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "chatty_foods.db")
@@ -23,7 +24,8 @@ _RECIPE_SCHEMA = """
         ingredients TEXT,
         directions TEXT,
         notes TEXT,
-        source_conversation TEXT
+        source_conversation TEXT,
+        created_at TEXT
     )
 """
 
@@ -34,15 +36,25 @@ _TIP_SCHEMA = """
         category TEXT NOT NULL,
         items TEXT,
         notes TEXT,
-        source_conversation TEXT
+        source_conversation TEXT,
+        created_at TEXT
     )
 """
+
+
+def _has_column(conn, table, column):
+    cols = conn.execute(f"PRAGMA table_info({table})").fetchall()
+    return any(c["name"] == column for c in cols)
 
 
 def init_db():
     conn = get_db()
     conn.execute(_RECIPE_SCHEMA)
     conn.execute(_TIP_SCHEMA)
+    # Migrate existing tables that lack created_at
+    for table in ("recipe_cards", "food_tips"):
+        if not _has_column(conn, table, "created_at"):
+            conn.execute(f"ALTER TABLE {table} ADD COLUMN created_at TEXT")
     conn.commit()
     conn.close()
 
@@ -128,12 +140,16 @@ def get_counts():
     return recipe_count, tip_count
 
 
+def _now():
+    return datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+
+
 def insert_recipe(data):
     conn = get_db()
     conn.execute(
         "INSERT INTO recipe_cards (title, category, prep_time, cook_time, "
-        "portion_count, ingredients, directions, notes, source_conversation) "
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        "portion_count, ingredients, directions, notes, source_conversation, "
+        "created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         (
             data["title"],
             data["category"],
@@ -144,6 +160,7 @@ def insert_recipe(data):
             json.dumps(data.get("directions", [])),
             data.get("notes", ""),
             data.get("source_conversation"),
+            data.get("created_at") or _now(),
         ),
     )
     row_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
@@ -155,14 +172,15 @@ def insert_recipe(data):
 def insert_tip(data):
     conn = get_db()
     conn.execute(
-        "INSERT INTO food_tips (title, category, items, notes, source_conversation) "
-        "VALUES (?, ?, ?, ?, ?)",
+        "INSERT INTO food_tips (title, category, items, notes, source_conversation, "
+        "created_at) VALUES (?, ?, ?, ?, ?, ?)",
         (
             data["title"],
             data["category"],
             json.dumps(data.get("items", [])),
             data.get("notes", ""),
             data.get("source_conversation"),
+            data.get("created_at") or _now(),
         ),
     )
     row_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
@@ -175,11 +193,11 @@ def export_all():
     conn = get_db()
     recipes = conn.execute(
         "SELECT title, category, prep_time, cook_time, portion_count, "
-        "ingredients, directions, notes, source_conversation "
+        "ingredients, directions, notes, source_conversation, created_at "
         "FROM recipe_cards ORDER BY title"
     ).fetchall()
     tips = conn.execute(
-        "SELECT title, category, items, notes, source_conversation "
+        "SELECT title, category, items, notes, source_conversation, created_at "
         "FROM food_tips ORDER BY title"
     ).fetchall()
     conn.close()
@@ -196,6 +214,7 @@ def export_all():
             "directions": json.loads(r["directions"]) if r["directions"] else [],
             "notes": r["notes"],
             "source_conversation": r["source_conversation"],
+            "created_at": r["created_at"],
         })
 
     tip_list = []
@@ -206,6 +225,7 @@ def export_all():
             "items": json.loads(t["items"]) if t["items"] else [],
             "notes": t["notes"],
             "source_conversation": t["source_conversation"],
+            "created_at": t["created_at"],
         })
 
     return recipe_list, tip_list

@@ -23,6 +23,9 @@
     {% if recipe.portion_count %}
     <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">{{ recipe.portion_count }}</span>
     {% endif %}
+    {% if date_display %}
+    <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">{{ date_display }}</span>
+    {% endif %}
 </div>
 
 <div class="grid md:grid-cols-3 gap-8">
