@@ -26,7 +26,8 @@ _RECIPE_SCHEMA = """
         notes TEXT,
         source_conversation TEXT,
         created_at TEXT,
-        source_type TEXT DEFAULT 'ai'
+        source_type TEXT DEFAULT 'ai',
+        highlight INTEGER DEFAULT 0
     )
 """
 
@@ -39,7 +40,8 @@ _TIP_SCHEMA = """
         notes TEXT,
         source_conversation TEXT,
         created_at TEXT,
-        source_type TEXT DEFAULT 'ai'
+        source_type TEXT DEFAULT 'ai',
+        highlight INTEGER DEFAULT 0
     )
 """
 
@@ -59,6 +61,8 @@ def init_db():
             conn.execute(f"ALTER TABLE {table} ADD COLUMN created_at TEXT")
         if not _has_column(conn, table, "source_type"):
             conn.execute(f"ALTER TABLE {table} ADD COLUMN source_type TEXT DEFAULT 'ai'")
+        if not _has_column(conn, table, "highlight"):
+            conn.execute(f"ALTER TABLE {table} ADD COLUMN highlight INTEGER DEFAULT 0")
     conn.commit()
     conn.close()
 
@@ -69,14 +73,14 @@ def get_recipes(category=None):
     conn = get_db()
     if category:
         rows = conn.execute(
-            "SELECT id, title, category, prep_time, cook_time, portion_count, source_type "
-            "FROM recipe_cards WHERE category = ? ORDER BY title",
+            "SELECT id, title, category, prep_time, cook_time, portion_count, source_type, highlight "
+            "FROM recipe_cards WHERE category = ? ORDER BY highlight DESC, title",
             (category,),
         ).fetchall()
     else:
         rows = conn.execute(
-            "SELECT id, title, category, prep_time, cook_time, portion_count, source_type "
-            "FROM recipe_cards ORDER BY title"
+            "SELECT id, title, category, prep_time, cook_time, portion_count, source_type, highlight "
+            "FROM recipe_cards ORDER BY highlight DESC, title"
         ).fetchall()
     conn.close()
     return rows
@@ -95,13 +99,14 @@ def get_tips(category=None):
     conn = get_db()
     if category:
         rows = conn.execute(
-            "SELECT id, title, category, items, source_type FROM food_tips "
-            "WHERE category = ? ORDER BY title",
+            "SELECT id, title, category, items, source_type, highlight FROM food_tips "
+            "WHERE category = ? ORDER BY highlight DESC, title",
             (category,),
         ).fetchall()
     else:
         rows = conn.execute(
-            "SELECT id, title, category, items, source_type FROM food_tips ORDER BY title"
+            "SELECT id, title, category, items, source_type, highlight FROM food_tips "
+            "ORDER BY highlight DESC, title"
         ).fetchall()
     conn.close()
     return rows
@@ -136,6 +141,26 @@ def get_tip_categories():
     return rows
 
 
+def get_highlighted_recipes():
+    conn = get_db()
+    rows = conn.execute(
+        "SELECT id, title, category FROM recipe_cards "
+        "WHERE highlight = 1 ORDER BY title"
+    ).fetchall()
+    conn.close()
+    return rows
+
+
+def get_highlighted_tips():
+    conn = get_db()
+    rows = conn.execute(
+        "SELECT id, title, category FROM food_tips "
+        "WHERE highlight = 1 ORDER BY title"
+    ).fetchall()
+    conn.close()
+    return rows
+
+
 def get_counts():
     conn = get_db()
     recipe_count = conn.execute("SELECT COUNT(*) FROM recipe_cards").fetchone()[0]
@@ -153,7 +178,7 @@ def insert_recipe(data):
     conn.execute(
         "INSERT INTO recipe_cards (title, category, prep_time, cook_time, "
         "portion_count, ingredients, directions, notes, source_conversation, "
-        "created_at, source_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        "created_at, source_type, highlight) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         (
             data["title"],
             data["category"],
@@ -166,6 +191,7 @@ def insert_recipe(data):
             data.get("source_conversation"),
             data.get("created_at") or _now(),
             data.get("source_type", "ai"),
+            1 if data.get("highlight") else 0,
         ),
     )
     row_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
@@ -178,7 +204,7 @@ def insert_tip(data):
     conn = get_db()
     conn.execute(
         "INSERT INTO food_tips (title, category, items, notes, source_conversation, "
-        "created_at, source_type) VALUES (?, ?, ?, ?, ?, ?, ?)",
+        "created_at, source_type, highlight) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
         (
             data["title"],
             data["category"],
@@ -187,6 +213,7 @@ def insert_tip(data):
             data.get("source_conversation"),
             data.get("created_at") or _now(),
             data.get("source_type", "ai"),
+            1 if data.get("highlight") else 0,
         ),
     )
     row_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
@@ -199,11 +226,11 @@ def export_all():
     conn = get_db()
     recipes = conn.execute(
         "SELECT title, category, prep_time, cook_time, portion_count, "
-        "ingredients, directions, notes, source_conversation, created_at, source_type "
+        "ingredients, directions, notes, source_conversation, created_at, source_type, highlight "
         "FROM recipe_cards ORDER BY title"
     ).fetchall()
     tips = conn.execute(
-        "SELECT title, category, items, notes, source_conversation, created_at, source_type "
+        "SELECT title, category, items, notes, source_conversation, created_at, source_type, highlight "
         "FROM food_tips ORDER BY title"
     ).fetchall()
     conn.close()
@@ -222,6 +249,7 @@ def export_all():
             "source_conversation": r["source_conversation"],
             "created_at": r["created_at"],
             "source_type": r["source_type"] or "ai",
+            "highlight": bool(r["highlight"]),
         })
 
     tip_list = []
@@ -234,6 +262,7 @@ def export_all():
             "source_conversation": t["source_conversation"],
             "created_at": t["created_at"],
             "source_type": t["source_type"] or "ai",
+            "highlight": bool(t["highlight"]),
         })
 
     return recipe_list, tip_list
@@ -244,15 +273,15 @@ def search(query):
     q = f"%{query}%"
     recipes = conn.execute(
         "SELECT id, title, category, prep_time, cook_time, portion_count, "
-        "ingredients, notes, source_type FROM recipe_cards "
+        "ingredients, notes, source_type, highlight FROM recipe_cards "
         "WHERE title LIKE ? OR ingredients LIKE ? OR notes LIKE ? "
-        "ORDER BY title",
+        "ORDER BY highlight DESC, title",
         (q, q, q),
     ).fetchall()
     tips = conn.execute(
-        "SELECT id, title, category, items, notes, source_type FROM food_tips "
+        "SELECT id, title, category, items, notes, source_type, highlight FROM food_tips "
         "WHERE title LIKE ? OR items LIKE ? OR notes LIKE ? "
-        "ORDER BY title",
+        "ORDER BY highlight DESC, title",
         (q, q, q),
     ).fetchall()
     conn.close()

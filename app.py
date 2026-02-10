@@ -32,12 +32,16 @@ def index():
     recipe_count, tip_count = db.get_counts()
     recipe_categories = db.get_recipe_categories()
     tip_categories = db.get_tip_categories()
+    highlighted_recipes = db.get_highlighted_recipes()
+    highlighted_tips = db.get_highlighted_tips()
     return render_template(
         "index.html",
         recipe_count=recipe_count,
         tip_count=tip_count,
         recipe_categories=recipe_categories,
         tip_categories=tip_categories,
+        highlighted_recipes=highlighted_recipes,
+        highlighted_tips=highlighted_tips,
     )
 
 
@@ -95,6 +99,7 @@ def tips():
             "category": row["category"],
             "item_count": len(items),
             "source_type": row["source_type"] or "ai",
+            "highlight": row["highlight"],
         })
     return render_template(
         "tips.html",
@@ -152,6 +157,7 @@ def _clean_recipe(row):
         "source_conversation": row["source_conversation"],
         "created_at": row["created_at"],
         "source_type": row["source_type"] or "ai",
+        "highlight": bool(row["highlight"]),
     }
 
 
@@ -164,6 +170,7 @@ def _clean_tip(row):
         "source_conversation": row["source_conversation"],
         "created_at": row["created_at"],
         "source_type": row["source_type"] or "ai",
+        "highlight": bool(row["highlight"]),
     }
 
 
