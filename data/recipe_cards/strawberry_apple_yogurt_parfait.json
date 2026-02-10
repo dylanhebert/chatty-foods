@@ -1,0 +1,53 @@
+{
+  "title": "Strawberry Apple Yogurt Parfait with Honey Cookie Crumble",
+  "category": "breakfast",
+  "prep_time": 5,
+  "cook_time": 5,
+  "portion_count": "1 serving",
+  "ingredients": [
+    {
+      "name": "strawberries, sliced",
+      "amount": "1/2 cup"
+    },
+    {
+      "name": "apple, diced",
+      "amount": "1/2"
+    },
+    {
+      "name": "Greek yogurt",
+      "amount": "1/2 cup"
+    },
+    {
+      "name": "honey",
+      "amount": "1-2 tsp"
+    },
+    {
+      "name": "brown sugar",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "butter or coconut oil",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "flour or oats",
+      "amount": "1-2 tbsp"
+    },
+    {
+      "name": "salt",
+      "amount": "pinch"
+    },
+    {
+      "name": "cinnamon (optional)",
+      "amount": "pinch"
+    }
+  ],
+  "directions": [
+    "Make the cookie crumble: In a small skillet or microwave-safe bowl, mix brown sugar, butter, flour or oats, salt, and cinnamon. Heat until the mixture bubbles, then stir until crumbly. Let cool and crisp.",
+    "Prep the fruit: Toss diced apple and sliced strawberries with a drizzle of honey. Optionally microwave the apples for 30-45 seconds to soften slightly.",
+    "Assemble the parfait: Layer Greek yogurt, fruit, and crumble in a glass or bowl. Repeat layers.",
+    "Drizzle with more honey on top."
+  ],
+  "notes": "No-bake layered dessert. Optional add-ons: dash of vanilla or almond extract in the yogurt, lemon zest or juice in the fruit, toasted nuts or granola for crunch. Can also add chocolate chips for a richer version.",
+  "source_conversation": "Quick_Strawberry_Apple_Parfait_246.json"
+}

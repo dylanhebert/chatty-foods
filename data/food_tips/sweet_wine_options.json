@@ -1,0 +1,16 @@
+{
+  "title": "Sweet Wine Recommendations by Category",
+  "category": "pairing",
+  "items": [
+    {"name": "Jam Jar Sweet Shiraz", "details": "Truly sweet with jammy berry flavor. Blue label with white cap."},
+    {"name": "Apothic Red / Apothic Crush", "details": "Off-dry with a smooth, slightly sweet finish. Not fully sweet but approachable."},
+    {"name": "Menage a Trois Red Blend", "details": "Off-dry blend with soft sweetness."},
+    {"name": "Stella Rosa (all varieties)", "details": "Sweet and lightly fizzy dessert-style wines. Available in black, red, peach, berry, and tropical."},
+    {"name": "Riunite Lambrusco", "details": "Sweet, slightly sparkling red. Best served chilled for easy drinking."},
+    {"name": "Barefoot Moscato / Pink Moscato / Red Moscato", "details": "Noticeably sweet, budget-friendly, and fruity."},
+    {"name": "Relax Riesling", "details": "Medium-sweet, crisp, and floral. Good balance without being syrupy."},
+    {"name": "Roscato Rosso Dolce", "details": "Smooth, sweet red with a bit of fizz. Very popular sweet red option."}
+  ],
+  "notes": "For unmistakably sweet wines, go with Stella Rosa or Barefoot Moscato. For sweet but more balanced options, try Relax Riesling or Roscato. Most standard reds (Decoy, Josh, Coppola, Meiomi) are dry, not sweet.",
+  "source_conversation": "Sweet_wine_options_75.json"
+}

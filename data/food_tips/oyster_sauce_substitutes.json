@@ -1,0 +1,13 @@
+{
+  "title": "Oyster Sauce Substitute Options",
+  "category": "substitution",
+  "items": [
+    {"name": "Hoisin sauce", "details": "Sweeter and spiced, but same texture and richness. Add a splash of soy sauce to tone down sweetness. Good 1:1 substitute."},
+    {"name": "Soy sauce + honey/sugar", "details": "Mix 2 parts soy sauce with 1 part honey (or brown sugar) to mimic the salty-sweet balance. Good 1:1 substitute."},
+    {"name": "Fish sauce + soy sauce", "details": "Fish sauce has briny umami punch; add soy for body. Use sparingly since fish sauce is stronger. Good 1:1 substitute."},
+    {"name": "Teriyaki sauce", "details": "Sweeter but still works in many dishes. A lighter option."},
+    {"name": "Miso paste + water/soy sauce", "details": "Earthy, umami-rich substitute. Great brushed on salmon. A lighter option."}
+  ],
+  "notes": "Oyster sauce is thick, savory, and slightly sweet with a deep umami flavor. For salmon specifically, the conversation also discussed topping sauces: soy sauce + honey + sesame oil (savory-sweet), hoisin + soy sauce (richer), soy sauce + rice vinegar + lime juice (bright and fresh), miso + honey + rice vinegar (tangy-sweet), spicy mayo with sriracha and lime (creamy/spicy), or teriyaki (classic caramelized). A shredded cabbage and carrot mix pairs well with salmon and rice - either as a quick stir-fry with garlic, ginger, and soy sauce, or as a raw slaw with rice vinegar, sesame oil, honey, and soy sauce.",
+  "source_conversation": "Oyster_sauce_substitute_options_100.json"
+}

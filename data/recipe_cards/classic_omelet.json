@@ -1,0 +1,45 @@
+{
+  "title": "Classic Omelet",
+  "category": "breakfast",
+  "prep_time": 5,
+  "cook_time": 5,
+  "portion_count": "1 serving",
+  "ingredients": [
+    {
+      "name": "large eggs",
+      "amount": "3"
+    },
+    {
+      "name": "milk or water (optional)",
+      "amount": "2 tbsp"
+    },
+    {
+      "name": "salt",
+      "amount": "to taste"
+    },
+    {
+      "name": "pepper",
+      "amount": "to taste"
+    },
+    {
+      "name": "butter or oil",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "fillings such as cheese, ham, mushrooms, spinach, bell peppers, onions (optional)",
+      "amount": "as desired"
+    }
+  ],
+  "directions": [
+    "Crack eggs into a bowl. Add milk or water if using. Whisk until well blended and slightly frothy. Season with salt and pepper.",
+    "Place a non-stick pan over medium heat. Add butter or oil and let it melt, tilting the pan to coat the surface.",
+    "Pour the eggs into the pan. Let them sit for 30 seconds without stirring.",
+    "As the edges start to set, gently push them toward the center with a spatula, tilting the pan to let uncooked egg fill the gaps.",
+    "When the eggs are mostly set but still slightly runny on top, sprinkle fillings over half the omelet.",
+    "Carefully fold the omelet in half with the spatula.",
+    "Let it cook for another 30 seconds to 1 minute, just until the inside is cooked and any cheese melts.",
+    "Slide the omelet onto a plate and serve immediately."
+  ],
+  "notes": "Use medium heat to avoid browning the eggs too much. The goal is a soft, yellow omelet. Common filling combinations: cheese and ham, mushroom and spinach, or bell peppers and onions.",
+  "source_conversation": "How_to_make_omelet_512.json"
+}

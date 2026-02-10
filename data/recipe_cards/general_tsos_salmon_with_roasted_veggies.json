@@ -1,0 +1,69 @@
+{
+  "title": "General Tso's Salmon with Roasted Veggies and Rice",
+  "category": "seafood",
+  "prep_time": 10,
+  "cook_time": 22,
+  "portion_count": "2 servings",
+  "ingredients": [
+    {
+      "name": "salmon fillets",
+      "amount": "2 (6 oz each)"
+    },
+    {
+      "name": "General Tso's sauce (bottled)",
+      "amount": "3-4 tbsp"
+    },
+    {
+      "name": "salt",
+      "amount": "to taste"
+    },
+    {
+      "name": "black pepper",
+      "amount": "to taste"
+    },
+    {
+      "name": "garlic powder",
+      "amount": "pinch"
+    },
+    {
+      "name": "ginger powder (optional)",
+      "amount": "pinch"
+    },
+    {
+      "name": "zucchini",
+      "amount": "1"
+    },
+    {
+      "name": "yellow squash",
+      "amount": "1"
+    },
+    {
+      "name": "olive oil",
+      "amount": "1-2 tbsp"
+    },
+    {
+      "name": "white rice, cooked",
+      "amount": "2 cups"
+    },
+    {
+      "name": "sesame seeds (optional)",
+      "amount": "for garnish"
+    },
+    {
+      "name": "green onion (optional)",
+      "amount": "for garnish"
+    }
+  ],
+  "directions": [
+    "Preheat oven to 425F.",
+    "Slice zucchini and squash into half-moons. Toss with olive oil, salt, and pepper. Spread on a sheet pan.",
+    "Roast veggies alone for 10 minutes to give them a head start.",
+    "While veggies roast, pat salmon dry. Season with salt, pepper, garlic powder, and ginger powder. Brush a thin layer of General Tso's sauce on top.",
+    "After 10 minutes, push veggies to one half of the pan. Place salmon on the other half. Add a little more oil to veggies if they look dry.",
+    "Roast everything together for 10-12 more minutes until salmon is flaky and veggies are lightly browned.",
+    "Remove from oven. Brush another spoonful of General Tso's sauce on the salmon while hot. Let sit 2 minutes so the glaze sticks.",
+    "Serve in a bowl: rice on bottom, veggies next, salmon on top with the sticky glaze. Drizzle a small amount of extra sauce over everything. Garnish with sesame seeds or green onion."
+  ],
+  "notes": "Uses bottled General Tso's sauce for convenience. Don't stack too many seasonings since the sauce has a strong profile already. Keep extras simple: salt, pepper, garlic powder, ginger powder. For pan-seared version: sear salmon skin-side down 3-4 min, flip 2 min, drop heat to medium-low, add 2-3 tbsp sauce, let it bubble 1-2 min. If using two oven racks, put salmon on middle rack and veggies on lower rack, swap halfway through.",
+  "source_conversation": "Salmon_cooking_suggestions_65.json"
+}

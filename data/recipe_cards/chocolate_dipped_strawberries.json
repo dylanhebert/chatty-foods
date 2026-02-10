@@ -1,0 +1,40 @@
+{
+  "title": "Chocolate-Dipped Strawberries",
+  "category": "dessert",
+  "prep_time": 15,
+  "cook_time": 15,
+  "portion_count": "about 30 strawberries (800g)",
+  "ingredients": [
+    {
+      "name": "strawberries",
+      "amount": "800g (about 1.75 lbs)"
+    },
+    {
+      "name": "milk chocolate chips",
+      "amount": "150g (5.3 oz)"
+    },
+    {
+      "name": "bittersweet chocolate (66% cacao), chopped",
+      "amount": "125g (4 oz)"
+    },
+    {
+      "name": "white chocolate, chopped",
+      "amount": "100g (3.5 oz)"
+    },
+    {
+      "name": "coconut oil (for milk chocolate chips)",
+      "amount": "3/4 tsp"
+    }
+  ],
+  "directions": [
+    "Wash and thoroughly pat dry the strawberries. They must be completely dry for chocolate to adhere.",
+    "Set up a double boiler: fill a pot with 1-2 inches of water and bring to a simmer (not a rolling boil). Place a heatproof glass bowl over the pot, making sure it does not touch the water.",
+    "Melt each chocolate separately. For the milk chocolate chips, add 3/4 tsp coconut oil to help them melt smoothly.",
+    "Stir constantly with a rubber spatula until smooth and fully melted. Remove from heat.",
+    "Hold each strawberry by the stem and dip into the melted chocolate, letting excess drip off.",
+    "Place dipped strawberries on a parchment-lined tray.",
+    "Refrigerate for 15-30 minutes until chocolate is fully set."
+  ],
+  "notes": "Chocolate chips contain stabilizers and don't melt as smoothly as baking bars -- add 1/2 tsp coconut oil per 100g of chips. For best results use chocolate baking bars (Baker's or Ghirardelli). Top chocolate brands for dipping: Ghirardelli, Valrhona, Guittard, Callebaut. Chocolate couverture (31%+ cocoa butter) gives the smoothest coating and best snap. For a glossier finish, temper the chocolate. If storing overnight, cover loosely with wax paper or parchment (not plastic wrap) and refrigerate. For transport on road trips, use a cooler bag with ice packs -- avoid direct contact with ice to prevent condensation. Take out 30 minutes before serving. If buying strawberries in advance, do NOT wash until ready to use; store dry in the fridge in a ventilated container with paper towels.",
+  "source_conversation": "Best_Chocolate_for_Dipping_426.json"
+}

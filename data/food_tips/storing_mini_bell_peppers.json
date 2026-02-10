@@ -1,0 +1,11 @@
+{
+  "title": "Storing Mini Bell Peppers",
+  "category": "storage",
+  "items": [
+    {"name": "Crisper drawer in a breathable bag", "details": "Store in the crisper drawer of the refrigerator in a breathable bag such as a perforated plastic bag or produce bag. This maintains freshness while allowing airflow."},
+    {"name": "Avoid airtight containers", "details": "Unlike cut peppers, whole mini bell peppers should not be sealed in airtight containers as excess moisture causes faster spoilage."},
+    {"name": "Shelf life", "details": "Properly stored, mini bell peppers last about 1-2 weeks in the fridge."}
+  ],
+  "notes": "The key difference from storing cut bell peppers is that whole mini peppers need airflow rather than a sealed environment. Breathable bags are the way to go.",
+  "source_conversation": "Storing_Mini_Bell_Peppers_357.json"
+}

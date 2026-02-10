@@ -1,0 +1,13 @@
+{
+  "title": "Bell Pepper Freshness Check",
+  "category": "storage",
+  "items": [
+    {"name": "Fridge life", "details": "Green bell peppers last about a week in the fridge if stored properly."},
+    {"name": "Signs of going bad", "details": "Soft spots, wrinkles, shriveling, or mold indicate the pepper is past its prime."},
+    {"name": "Wrinkled but not moldy", "details": "Still safe to eat and usable for cooking, but will have lost crispness and flavor. Not good for eating raw."},
+    {"name": "Where mold appears", "details": "Usually starts on the outside as fuzzy spots or discoloration. Check inside after cutting open as well."},
+    {"name": "When to discard", "details": "If you see mold inside, strong off smell, or fuzzy patches, throw it out."}
+  ],
+  "notes": "A wrinkled pepper is still safe for cooking if not moldy, but won't have the best texture or flavor.",
+  "source_conversation": "Bell_Pepper_Freshness_Check_296.json"
+}

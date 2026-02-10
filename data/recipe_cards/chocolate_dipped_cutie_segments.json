@@ -1,0 +1,38 @@
+{
+  "title": "Chocolate-Dipped Cutie Segments",
+  "category": "dessert",
+  "prep_time": 5,
+  "cook_time": 2,
+  "portion_count": "1 serving",
+  "ingredients": [
+    {
+      "name": "cutie (small orange)",
+      "amount": "1"
+    },
+    {
+      "name": "chocolate chips",
+      "amount": "1/4 cup"
+    },
+    {
+      "name": "sea salt (optional)",
+      "amount": "pinch"
+    },
+    {
+      "name": "chopped nuts (optional)",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "crushed graham cracker (optional)",
+      "amount": "1 tbsp"
+    }
+  ],
+  "directions": [
+    "Peel the cutie and separate the segments.",
+    "Melt chocolate chips in the microwave in 20-30 second bursts, stirring in between.",
+    "Dip segments halfway into the melted chocolate.",
+    "Optionally sprinkle with sea salt, chopped nuts, or crushed graham cracker.",
+    "Set on parchment paper and chill in the fridge until firm, about 10-15 minutes."
+  ],
+  "notes": "Fast, fresh, and indulgent. Great for satisfying a quick chocolate-orange craving. Can use any toppings you have on hand.",
+  "source_conversation": "Quick_Chocolate_Orange_Desserts_319.json"
+}

@@ -1,0 +1,76 @@
+{
+  "title": "Lemon Garlic Chicken Grain Bowl",
+  "category": "chicken",
+  "prep_time": 10,
+  "cook_time": 25,
+  "portion_count": "2 servings",
+  "ingredients": [
+    {
+      "name": "chicken thighs",
+      "amount": "2-4"
+    },
+    {
+      "name": "garlic cloves, minced",
+      "amount": "3"
+    },
+    {
+      "name": "non-alcoholic Sauvignon Blanc (or white wine)",
+      "amount": "2-3 tbsp"
+    },
+    {
+      "name": "chicken broth or water",
+      "amount": "2-3 tbsp"
+    },
+    {
+      "name": "butter",
+      "amount": "1 1/2 tbsp"
+    },
+    {
+      "name": "bottled lemon juice",
+      "amount": "1-1 1/2 tsp"
+    },
+    {
+      "name": "black pepper",
+      "amount": "to taste"
+    },
+    {
+      "name": "red pepper flakes (optional)",
+      "amount": "pinch"
+    },
+    {
+      "name": "walnuts, rough-chopped",
+      "amount": "small handful"
+    },
+    {
+      "name": "egg",
+      "amount": "1"
+    },
+    {
+      "name": "multigrain rice/veggie blend",
+      "amount": "1 package"
+    },
+    {
+      "name": "salt",
+      "amount": "to taste"
+    },
+    {
+      "name": "olive oil",
+      "amount": "for cooking"
+    }
+  ],
+  "directions": [
+    "Season and pan-sear chicken thighs until golden and cooked through. Remove from pan.",
+    "In the same pan, saute 3 cloves minced garlic for 30 seconds.",
+    "Deglaze with 2-3 tbsp non-alcoholic Sauvignon Blanc (use half the amount of regular wine). Add a splash of chicken broth or water.",
+    "Simmer for a full minute to mellow the NA wine.",
+    "Add 1-1.5 tsp bottled lemon juice off heat at the very end.",
+    "Finish the sauce by swirling in 1.5 tbsp butter and seasoning with black pepper.",
+    "Toast rough-chopped walnuts dry in a separate pan for 2-3 minutes until fragrant.",
+    "Cook the multigrain rice/veggie blend on the stovetop. When done, fold in salt, a small knob of butter, and black pepper.",
+    "Fry an egg in butter on medium heat for 2-3 minutes until whites are set and yolk is runny. Season with salt and pepper.",
+    "Assemble the bowl: rice on the bottom, then veggies, then chicken with pan sauce spooned over, then walnuts, then fried egg on top.",
+    "Break the yolk over everything and serve immediately."
+  ],
+  "notes": "Bowl assembly order matters: rice, veggies, chicken + sauce, walnuts, then egg on very top. Break the yolk so it runs through everything. Non-alcoholic wine is more acidic and sweeter than real wine, so use about half the amount. Bottled lemon juice is sharper than fresh -- start with less and add more to taste. Add lemon juice off heat to keep it tasting bright. If sauce seems thin, use about 1/4 cup total liquid and let it reduce to glossy. Add 1-2 tbsp hot water at the end if you want it saucier. Use walnuts over hazelnuts here -- hazelnuts are too sweet/dessert-leaning for this dish.",
+  "source_conversation": "Chicken_Thigh_Sauce_Ideas_25.json"
+}

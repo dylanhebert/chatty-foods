@@ -1,0 +1,42 @@
+{
+  "title": "Mint Strawberry Vanilla Coffee Syrup",
+  "category": "coffee",
+  "prep_time": 5,
+  "cook_time": 8,
+  "portion_count": "1 bottle (about 1 cup)",
+  "ingredients": [
+    {
+      "name": "ripe strawberries (sliced)",
+      "amount": "2"
+    },
+    {
+      "name": "fresh mint leaves",
+      "amount": "4-6"
+    },
+    {
+      "name": "sugar (or honey)",
+      "amount": "1/2 cup"
+    },
+    {
+      "name": "water",
+      "amount": "1/2 cup"
+    },
+    {
+      "name": "vanilla extract",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "lemon juice (optional)",
+      "amount": "1/4 tsp"
+    }
+  ],
+  "directions": [
+    "In a small saucepan, combine water, sugar, sliced strawberries, and mint leaves.",
+    "Simmer gently for 5-8 minutes, stirring occasionally. Lightly mash the strawberries with a spoon or fork.",
+    "Remove from heat and stir in vanilla extract and optional lemon juice.",
+    "Strain well through a fine-mesh sieve to remove mint and berry pulp. Press strawberries to extract all juice.",
+    "Let cool before bottling. Store in the fridge for 1-2 weeks."
+  ],
+  "notes": "A lightly fruity and refreshing syrup. The vanilla smooths out the edges and gives a slightly creamy, rounded finish. Great in cold brew, iced lattes with milk or cream, sparkling water, lemonade, mojitos, and vodka spritzers. For a stronger berry flavor, use more strawberries.",
+  "source_conversation": "Coffee_Syrups_256.json"
+}

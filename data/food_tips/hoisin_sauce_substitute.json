@@ -1,0 +1,24 @@
+{
+  "title": "Hoisin Sauce Substitute Options",
+  "category": "substitution",
+  "items": [
+    {
+      "name": "Basic hoisin substitute (per 1 tbsp hoisin)",
+      "details": "2 tbsp soy sauce + 1 tbsp honey (or brown sugar) + 1 tsp rice vinegar or apple cider vinegar. Optionally add a small amount of peanut butter or tahini for richer texture."
+    },
+    {
+      "name": "Scaled substitute for 1/4 cup hoisin",
+      "details": "1/4 cup soy sauce + 2 tbsp honey or brown sugar + 1 tbsp rice vinegar or apple cider vinegar + 1 tsp peanut butter or tahini (optional)."
+    },
+    {
+      "name": "Scaled substitute for 1/2 cup hoisin",
+      "details": "1/2 cup soy sauce + 4 tbsp honey or brown sugar + 2 tbsp rice vinegar or apple cider vinegar + 2 tsp peanut butter or tahini (optional)."
+    },
+    {
+      "name": "Enhanced version with five-spice",
+      "details": "Add 1/4 tsp Chinese five-spice powder to any of the above for added depth and warmth similar to authentic hoisin sauce."
+    }
+  ],
+  "notes": "This substitute works well in bourbon chicken recipes. Adjust sweetness and tanginess to taste. The peanut butter/tahini adds thickness and nuttiness. Double the recipe if more sauce is needed.",
+  "source_conversation": "Hoisin_Sauce_Substitute_Options_606.json"
+}

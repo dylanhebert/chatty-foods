@@ -1,0 +1,34 @@
+{
+  "title": "Honey Coffee Syrup",
+  "category": "coffee",
+  "prep_time": 2,
+  "cook_time": 5,
+  "portion_count": "1 bottle (about 1 cup)",
+  "ingredients": [
+    {
+      "name": "honey",
+      "amount": "1/2 cup"
+    },
+    {
+      "name": "water",
+      "amount": "1/2 cup"
+    },
+    {
+      "name": "vanilla extract",
+      "amount": "1/4 tsp"
+    },
+    {
+      "name": "lemon juice (optional)",
+      "amount": "1 tsp"
+    }
+  ],
+  "directions": [
+    "Combine honey and water in a small saucepan over medium heat.",
+    "Stir until honey is fully dissolved. Heat to around 190-200F (just below boiling).",
+    "Remove from heat and stir in vanilla extract and optional lemon juice.",
+    "Let cool to room temperature before bottling.",
+    "Store in an airtight container in the fridge for up to 2 weeks."
+  ],
+  "notes": "Use 1/4 tsp vanilla extract for a subtle flavor that won't overpower the honey. Lemon juice cuts through sweetness and acts as a mild preservative. For lattes with a 36g espresso shot, start with 1-2 tbsp of syrup. Pairs well with Orange Vanilla Syrup (2:1 ratio honey to orange vanilla). Add 1 tbsp vodka per cup to extend shelf life. Let cool before refrigerating to avoid condensation.",
+  "source_conversation": "Coffee_Syrups_256.json"
+}

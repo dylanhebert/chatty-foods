@@ -1,0 +1,12 @@
+{
+  "title": "Storing Cookie Dough Before Baking",
+  "category": "storage",
+  "items": [
+    {"name": "Fridge for 1-2 days", "details": "Keep dough tightly covered in the fridge in an airtight container to prevent drying out or absorbing other flavors. Good for up to 2 days before baking."},
+    {"name": "Pre-portion for convenience", "details": "Scoop dough into balls and store in an airtight container in the fridge. When ready to bake, pop them straight onto a baking sheet."},
+    {"name": "Freezer for longer storage", "details": "If storing longer than 2 days, use the freezer instead of the fridge."},
+    {"name": "Bring to room temp before baking", "details": "Take the dough out of the fridge while the oven preheats. Let it sit at room temperature for 20-30 minutes to take the chill off. This helps the cookies bake more evenly."}
+  ],
+  "notes": "For short-term storage (1-2 days), the fridge is perfect. The freezer is only necessary for longer storage periods. Always let refrigerated dough warm slightly before baking for best results.",
+  "source_conversation": "Storing_Cookie_Dough_185.json"
+}

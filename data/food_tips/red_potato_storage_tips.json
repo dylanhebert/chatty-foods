@@ -1,0 +1,12 @@
+{
+  "title": "Red Potato Storage Tips",
+  "category": "storage",
+  "items": [
+    {"name": "Shelf life", "details": "Red potatoes last about 2-3 weeks stored in a cool, dark, well-ventilated place like a pantry or cellar."},
+    {"name": "Fridge storage", "details": "Lasts a bit longer in the fridge but can get sweeter and gritty in texture over time."},
+    {"name": "Signs they are bad", "details": "Heavy sprouting, feeling very soft, or having a strong off smell means it is time to toss them."},
+    {"name": "Signs they are good", "details": "If they are still firm and smell earthy, they are fine to use."}
+  ],
+  "notes": "Store in a cool, dark, well-ventilated area for best results. Avoid refrigeration unless necessary as it affects texture.",
+  "source_conversation": "Red_potato_storage_tips_93.json"
+}

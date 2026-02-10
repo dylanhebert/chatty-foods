@@ -1,0 +1,20 @@
+{
+  "title": "Leftover Tex-Mex Storage and Reheating",
+  "category": "storage",
+  "items": [
+    {
+      "name": "Tex-Mex leftovers fridge life",
+      "details": "Leftover Tex-Mex dishes like stuffed poblano peppers are good for 3-4 days in the fridge. Check that they still smell and look OK before reheating -- no weird smell or discoloration."
+    },
+    {
+      "name": "Best reheating method: toaster oven",
+      "details": "Toaster oven at 350F for 10-15 minutes gives the best texture -- keeps food crisp and evenly heated."
+    },
+    {
+      "name": "Quick reheating: microwave",
+      "details": "Faster but can make food soggy. Use only if short on time."
+    }
+  ],
+  "notes": "Restaurant to-go containers are fine for short-term fridge storage. When in doubt, always check smell and appearance before eating leftovers.",
+  "source_conversation": "Leftover_Tex-Mex_Safety_290.json"
+}

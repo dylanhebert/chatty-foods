@@ -1,0 +1,14 @@
+{
+  "title": "Steaming Milk for Latte Art on a Breville Bambino Plus",
+  "category": "technique",
+  "items": [
+    {"name": "Introduce air for longer", "details": "Instead of the standard 2-4 seconds, try stretching (adding air) for 5-6 seconds before fully submerging the wand. The Bambino's steam power is lower than commercial machines, so it takes longer to aerate properly."},
+    {"name": "Lower the pitcher slightly", "details": "Keep the tip of the wand just below the surface when stretching. Too deep means not enough air; too high means big bubbles."},
+    {"name": "Off-center positioning", "details": "Keep the steam wand slightly off-center to create a whirlpool effect. This breaks down bubbles and creates smooth microfoam."},
+    {"name": "Use cold milk and a cold pitcher", "details": "This gives you more time to stretch and texture the milk before it overheats."},
+    {"name": "Adjust the temperature", "details": "If using the auto-steam function, try setting it to a lower temperature to allow more time for texturing."},
+    {"name": "Purge the wand before and after", "details": "This ensures strong steam pressure and prevents water from diluting the milk."}
+  ],
+  "notes": "The Breville Bambino Plus operates differently from commercial machines. The key issue is that its lower steam power means standard video tutorials showing 2-4 seconds of air introduction are often not enough. Extending to 5-6 seconds typically solves the problem of milk that is too thin for latte art.",
+  "source_conversation": "Steaming_Milk_for_Latte_Art_361.json"
+}

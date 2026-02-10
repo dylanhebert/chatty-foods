@@ -1,0 +1,14 @@
+{
+  "title": "Using Costco Salmon for Sushi",
+  "category": "technique",
+  "items": [
+    {"name": "Use farmed Atlantic salmon", "details": "The common Costco farmed Atlantic salmon fillets are the safest option for raw consumption."},
+    {"name": "Freeze before eating raw", "details": "Freeze solid at -4F / -20C for at least 7 days (home freezer standard) to kill parasites."},
+    {"name": "Avoid wild salmon", "details": "Wild salmon has a higher parasite risk and should not be used raw."},
+    {"name": "Thaw in the fridge", "details": "After freezing, thaw the salmon in the refrigerator before preparing."},
+    {"name": "Trim and serve same day", "details": "Trim off surface flesh, bloodline, and skin. Slice cleanly and eat the same day."},
+    {"name": "Avoid unclear frozen labels", "details": "Anything labeled 'previously frozen' without knowing the freezing temps/time should not be trusted for raw use."}
+  ],
+  "notes": "Costco salmon is fine for sushi if it is farmed Atlantic and you freeze it yourself first. For zero hassle, a Japanese or fish market selling explicitly sushi-grade fish is the safer, easier route.",
+  "source_conversation": "Costco_Salmon_for_Sushi_23.json"
+}

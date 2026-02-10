@@ -1,0 +1,12 @@
+{
+  "title": "Substituting Nuts and Chocolate in Baking",
+  "category": "substitution",
+  "items": [
+    {"name": "Bittersweet chocolate -> Semisweet chocolate", "details": "Use equal amounts of semisweet in place of bittersweet. To mimic the slight bitterness, add 1-2 teaspoons of Dutch-process cocoa powder to balance the sweetness."},
+    {"name": "Pecans -> Hazelnuts", "details": "Adds a more distinct, slightly sweet and nutty flavor. Use as a 1:1 replacement."},
+    {"name": "Pecans -> Walnuts", "details": "Gives a more traditional texture. Use as a 1:1 replacement."},
+    {"name": "Milk chocolate note", "details": "Milk chocolate is sweeter and milder than both bittersweet and semisweet. Semisweet is the better substitute for bittersweet."}
+  ],
+  "notes": "Also includes parchment sling technique: cut parchment longer than the pan so it overhangs two sides. Grease the pan first, press parchment in, and optionally add a second sheet perpendicular for full coverage. This makes it easy to lift baked goods (like brownies) out of the pan for clean cutting.",
+  "source_conversation": "Substituting_Nuts_and_Chocolate_354.json"
+}

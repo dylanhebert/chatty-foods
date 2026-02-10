@@ -1,0 +1,47 @@
+{
+  "title": "Pan-Seared Apple Chardonnay Chicken Sausage with Sriracha BBQ Glaze",
+  "category": "chicken",
+  "prep_time": 5,
+  "cook_time": 10,
+  "portion_count": "4 servings",
+  "ingredients": [
+    {
+      "name": "smoked apple chardonnay chicken sausages (pre-cooked)",
+      "amount": "8"
+    },
+    {
+      "name": "olive oil or avocado oil",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "butter",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "sriracha roasted garlic BBQ sauce",
+      "amount": "1-2 tbsp"
+    },
+    {
+      "name": "black pepper",
+      "amount": "dash"
+    },
+    {
+      "name": "onion powder (optional)",
+      "amount": "dash"
+    },
+    {
+      "name": "dried thyme or rosemary (optional)",
+      "amount": "pinch"
+    }
+  ],
+  "directions": [
+    "Preheat a nonstick or cast iron pan on medium heat. Add a splash of oil.",
+    "Place sausages in the pan whole or sliced into 1/2-inch pieces. Slicing gives more browning surface.",
+    "Sear for 4-5 minutes, turning occasionally, until browned on all sides and heated through.",
+    "Lower heat to medium-low. Add 1 tbsp butter. Tilt the pan and baste sausages as it melts. Optionally add dried thyme or rosemary at this point.",
+    "Turn heat to low. Add 1-2 tbsp of the sriracha BBQ sauce to the pan. Toss or roll sausages in the sauce for about 1 minute to glaze. Do not let it burn.",
+    "Kill the heat and serve. Extra sauce can be served on the side for dipping."
+  ],
+  "notes": "These sausages are fully cooked, so the goal is to brown and heat through. The BBQ sauce should be used as a light glaze at the end, not as a marinade - the sausage already has sweet/smoky flavoring. For a different approach, consider honey mustard glaze, apple cider reduction, or maple-Dijon sauce instead. For butter with sliced sausages, use 1/2 tbsp for 4 sausages or 1 tbsp for 8.",
+  "source_conversation": "Sausage_Marinade_Compatibility_202.json"
+}

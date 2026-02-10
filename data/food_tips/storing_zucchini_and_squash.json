@@ -1,0 +1,10 @@
+{
+  "title": "Storing Zucchini and Squash",
+  "category": "storage",
+  "items": [
+    {"name": "Refrigerator crisper drawer", "details": "Store whole and unwashed zucchini and squash in the crisper drawer of the fridge. They will stay firm for about a week."},
+    {"name": "Keep whole and unwashed", "details": "Do not wash or cut until you are ready to use them. This helps them stay fresh longer."}
+  ],
+  "notes": "Simple storage: keep them whole, unwashed, in the fridge crisper drawer. About 1 week shelf life.",
+  "source_conversation": "Store_zucchini_and_squash_105.json"
+}

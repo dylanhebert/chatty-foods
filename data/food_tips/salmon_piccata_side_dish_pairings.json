@@ -1,0 +1,11 @@
+{
+  "title": "Side Dish Pairings for Salmon Piccata",
+  "category": "pairing",
+  "items": [
+    {"name": "Garlic Broccolini with Lemon Zest", "details": "Trim broccolini ends, blanch in salted boiling water 1-2 minutes, drain and saute in olive oil with minced garlic 2-3 minutes. Finish with salt, pepper, and lemon zest to echo the piccata. Best if your dining partner likes broccoli."},
+    {"name": "Honey-Thyme Roasted Carrots", "details": "Slice carrots on a bias or use baby carrots. Toss with olive oil, salt, pepper, a drizzle of honey, and a sprinkle of thyme. Roast at 425F for 20-25 minutes until tender and caramelized. Sweet, savory, and pairs well with the lemony briny piccata."},
+    {"name": "General pairing principle", "details": "The lemony, caper-driven sauce of piccata pairs best with bright or slightly sweet vegetables. Avoid heavy, rich sides that compete with the sauce."}
+  ],
+  "notes": "Salmon piccata is typically served over white rice. Both suggested sides are elegant enough to match the dish. The roasted carrots are a good alternative for anyone who dislikes broccoli.",
+  "source_conversation": "Salmon_Piccata_Side_Ideas_191.json"
+}

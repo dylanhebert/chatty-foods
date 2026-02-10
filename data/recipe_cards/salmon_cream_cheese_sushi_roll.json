@@ -1,0 +1,39 @@
+{
+  "title": "Salmon Cream Cheese Sushi Roll",
+  "category": "sushi",
+  "prep_time": 15,
+  "cook_time": 0,
+  "portion_count": "1 roll (6-8 pieces)",
+  "ingredients": [
+    {
+      "name": "prepared sushi rice",
+      "amount": "3/4 cup"
+    },
+    {
+      "name": "nori sheet",
+      "amount": "1"
+    },
+    {
+      "name": "cured salmon (sliced thin)",
+      "amount": "2 oz"
+    },
+    {
+      "name": "cream cheese (cut into thin strips)",
+      "amount": "1 oz"
+    },
+    {
+      "name": "scallion (sliced thin, optional)",
+      "amount": "1"
+    }
+  ],
+  "directions": [
+    "Wrap bamboo mat in plastic wrap.",
+    "Place nori sheet shiny-side down on the mat.",
+    "Spread sushi rice evenly over the nori, leaving a 1-inch strip at the top.",
+    "Lay salmon slices, cream cheese strips, and optional scallion across the center of the rice.",
+    "Roll tightly using the bamboo mat, tucking the filling as you go.",
+    "Wet a sharp knife and slice the roll into 6-8 pieces using a single clean downward motion. Wet the knife between each cut."
+  ],
+  "notes": "A crowd-pleaser roll with zero risk. The cream cheese adds a rich, creamy element that pairs perfectly with the cured salmon.",
+  "source_conversation": "Sushi_Prep_for_Valentines_Day_2.json"
+}

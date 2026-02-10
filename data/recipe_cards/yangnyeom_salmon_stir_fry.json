@@ -1,0 +1,64 @@
+{
+  "title": "Yangnyeom Salmon Stir Fry",
+  "category": "seafood",
+  "prep_time": 10,
+  "cook_time": 15,
+  "portion_count": "2 servings",
+  "ingredients": [
+    {
+      "name": "salmon fillet, skin removed, cut into bite-size cubes",
+      "amount": "12 oz"
+    },
+    {
+      "name": "yangnyeom sauce (bottled)",
+      "amount": "2-3 tbsp"
+    },
+    {
+      "name": "neutral oil",
+      "amount": "2-3 tbsp"
+    },
+    {
+      "name": "salt",
+      "amount": "light pinch"
+    },
+    {
+      "name": "mixed stir-fry vegetables (frozen bag is fine)",
+      "amount": "2-3 cups"
+    },
+    {
+      "name": "white rice, cooked",
+      "amount": "2 cups"
+    },
+    {
+      "name": "soy sauce (optional)",
+      "amount": "splash"
+    },
+    {
+      "name": "lemon or rice vinegar (optional)",
+      "amount": "squeeze"
+    },
+    {
+      "name": "sesame oil (optional)",
+      "amount": "tiny drizzle"
+    },
+    {
+      "name": "green onion (optional)",
+      "amount": "for garnish"
+    },
+    {
+      "name": "sesame seeds (optional)",
+      "amount": "for garnish"
+    }
+  ],
+  "directions": [
+    "Preheat a stainless steel pan over medium-high. Add oil after it is hot.",
+    "Cook vegetables first: add 1-2 tbsp oil, spread veggies in the pan, do not touch for 2-3 minutes so they brown. Stir, season lightly with salt. Cook 5-7 minutes total until just tender. Remove to a bowl.",
+    "Add fresh oil if needed. Sear salmon cubes: lay them in the pan undisturbed, let the first side sear until it releases and gets color. Flip once to sear a second side. Only sear two sides to avoid overcooking.",
+    "Lower heat to medium. If there is excess oil (more than about 1 tbsp), tilt pan and spoon a little out.",
+    "Add 1-2 tbsp yangnyeom sauce directly to the pan. Toss salmon gently for 30 seconds max until glossy.",
+    "Add vegetables back to the pan. Toss just to coat. Kill the heat immediately.",
+    "Serve over rice. Drizzle sesame oil over the rice. Top with green onion and sesame seeds. Optional squeeze of lemon or rice vinegar to balance sweetness."
+  ],
+  "notes": "Remove salmon skin for stir fry - it will not crisp once cubed and sticks to stainless steel. Do not add sauce too early as the sugar will burn. Sauce goes in last, high heat for sear, medium heat for sauce. Do not overcrowd the pan or everything will steam. A splash of soy sauce can add savory depth. If sauce bubbles aggressively after adding, pull pan off heat immediately.",
+  "source_conversation": "Salmon_Stir_Fry_Tips_4.json"
+}

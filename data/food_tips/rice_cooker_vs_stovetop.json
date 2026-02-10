@@ -1,0 +1,11 @@
+{
+  "title": "Why Rice Cookers Take Longer Than Stovetop",
+  "category": "technique",
+  "items": [
+    {"name": "Rice cooker time", "details": "Typically 50 minutes to 1 hour."},
+    {"name": "Stovetop time", "details": "About 20 minutes."},
+    {"name": "Why the difference", "details": "Rice cookers use a more gradual process, regulating temperature and letting rice steam thoroughly. This longer cycle produces a more consistent texture compared to the faster boil-and-absorb stovetop method."}
+  ],
+  "notes": "The longer cook time in a rice cooker is by design, not a flaw. It leads to more evenly cooked rice with better texture consistency.",
+  "source_conversation": "Rice_cooker_vs_stovetop_18.json"
+}

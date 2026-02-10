@@ -1,0 +1,54 @@
+{
+  "title": "Kale and Apple Slaw with Strawberries",
+  "category": "side",
+  "prep_time": 10,
+  "cook_time": 0,
+  "portion_count": "2-3 servings",
+  "ingredients": [
+    {
+      "name": "kale, finely chopped",
+      "amount": "3-4 cups"
+    },
+    {
+      "name": "apple, thinly sliced or julienned",
+      "amount": "1"
+    },
+    {
+      "name": "strawberries, chopped",
+      "amount": "1/2 cup"
+    },
+    {
+      "name": "shredded cheese",
+      "amount": "1 small handful"
+    },
+    {
+      "name": "olive oil",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "white wine vinegar or apple cider vinegar",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "honey or Dijon mustard",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "salt",
+      "amount": "to taste"
+    },
+    {
+      "name": "black pepper",
+      "amount": "to taste"
+    }
+  ],
+  "directions": [
+    "Finely chop the kale and massage it with a little oil or vinegar to soften.",
+    "Thinly slice or julienne the apple. Chop the strawberries.",
+    "Whisk together 1 tbsp olive oil, 1 tbsp vinegar, 1/2 tsp honey or Dijon mustard, salt, and pepper to make the dressing.",
+    "Toss the kale, apple, strawberries, and shredded cheese with the dressing.",
+    "Serve as a side salad."
+  ],
+  "notes": "You can substitute regular white wine for the vinegar - use 1 tbsp white wine plus a small squeeze of lemon juice or a splash of peperoncini brine for acidity. Sharp cheddar works well for the cheese. Pairs well with Peperoncini Pork and Potato Saute as a dinner side.",
+  "source_conversation": "Ground_Pork_Potato_Skillet_258.json"
+}

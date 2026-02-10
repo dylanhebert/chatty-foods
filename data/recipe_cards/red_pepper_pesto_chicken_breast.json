@@ -1,0 +1,51 @@
+{
+  "title": "Red Pepper Pesto Chicken Breast",
+  "category": "chicken",
+  "prep_time": 5,
+  "cook_time": 15,
+  "portion_count": "4 servings",
+  "ingredients": [
+    {
+      "name": "chicken breasts",
+      "amount": "1.5 lb"
+    },
+    {
+      "name": "roasted red pepper pesto (jarred)",
+      "amount": "1/2 jar (4-5 tbsp)"
+    },
+    {
+      "name": "water or chicken broth",
+      "amount": "2-3 tbsp"
+    },
+    {
+      "name": "olive oil",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "salt",
+      "amount": "to taste"
+    },
+    {
+      "name": "black pepper",
+      "amount": "to taste"
+    },
+    {
+      "name": "garlic powder",
+      "amount": "to taste"
+    },
+    {
+      "name": "smoked paprika",
+      "amount": "to taste"
+    }
+  ],
+  "directions": [
+    "Season chicken breasts on both sides with salt, pepper, garlic powder, and smoked paprika.",
+    "Heat olive oil in a skillet over medium-high heat.",
+    "Sear chicken breasts until browned on both sides.",
+    "Lower heat, spoon in the red pepper pesto (about half the jar), and add 2-3 tbsp water or chicken broth to loosen into a sauce.",
+    "Simmer 5-7 minutes until the chicken is cooked through and coated in a thick, glossy sauce.",
+    "Serve with mashed potatoes and corn, spooning extra sauce over the mashed potatoes."
+  ],
+  "notes": "For 1.5 lb of chicken, start with half the jar of pesto. Use 2/3 of the jar if you want it extra saucy for mashed potatoes. Alternative seasoning: Italian seasoning with a tiny bit of crushed red pepper instead of smoked paprika. The sauce works like a creamy red pepper gravy over mashed potatoes. Sprinkle mashed potatoes with parsley or chives for freshness.",
+  "source_conversation": "Chicken_seasoning_and_sauce_61.json"
+}

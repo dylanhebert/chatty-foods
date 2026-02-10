@@ -1,0 +1,10 @@
+{
+  "title": "Cooked Cod Storage Time",
+  "category": "storage",
+  "items": [
+    {"name": "Cooked cod (fridge)", "details": "Stays fresh for 3-4 days when stored in an airtight container in the refrigerator."},
+    {"name": "Cooked cod (freezer)", "details": "If you won't eat it within 3-4 days, freeze it for longer storage."}
+  ],
+  "notes": "Always store in an airtight container for best results.",
+  "source_conversation": "Cooked_Cod_Storage_Time_341.json"
+}

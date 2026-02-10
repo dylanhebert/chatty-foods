@@ -1,0 +1,76 @@
+{
+  "title": "Cherry Wine Chicken Pan Sauce",
+  "category": "sauce",
+  "prep_time": 5,
+  "cook_time": 20,
+  "portion_count": "2 servings",
+  "ingredients": [
+    {
+      "name": "chicken breasts or thighs",
+      "amount": "2"
+    },
+    {
+      "name": "shallots or garlic cloves (minced)",
+      "amount": "1-2"
+    },
+    {
+      "name": "Stella Rosa Black Cherry wine (or similar sweet red wine)",
+      "amount": "1/2 cup"
+    },
+    {
+      "name": "chicken stock",
+      "amount": "1/2 cup"
+    },
+    {
+      "name": "red wine vinegar or lemon juice",
+      "amount": "1 splash"
+    },
+    {
+      "name": "Dijon mustard",
+      "amount": "1-2 tsp"
+    },
+    {
+      "name": "butter",
+      "amount": "1 small knob"
+    },
+    {
+      "name": "garlic powder",
+      "amount": "1 tsp"
+    },
+    {
+      "name": "onion powder",
+      "amount": "1 tsp"
+    },
+    {
+      "name": "smoked paprika",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "salt",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "black pepper",
+      "amount": "1/4 tsp"
+    },
+    {
+      "name": "dried thyme",
+      "amount": "1/4 tsp"
+    },
+    {
+      "name": "cayenne pepper",
+      "amount": "tiny pinch"
+    }
+  ],
+  "directions": [
+    "Combine garlic powder, onion powder, smoked paprika, salt, black pepper, dried thyme, and cayenne into a rub. Season chicken on both sides.",
+    "Sear chicken in a hot pan until cooked through. Remove from pan and set aside.",
+    "Add minced shallots or garlic cloves to the pan and saute briefly.",
+    "Deglaze with 1/2 cup sweet cherry wine, scraping up the brown bits. Let reduce by half or more (3-5 minutes).",
+    "Add 1/2 cup chicken stock and a splash of vinegar or lemon juice. Reduce again.",
+    "Whisk in 1-2 tsp Dijon mustard and a small knob of butter to finish the sauce.",
+    "Taste and adjust - if too sweet, add more acid or salt. Spoon sauce over chicken."
+  ],
+  "notes": "This recipe uses sweet semi-sparkling wine (Stella Rosa Black Cherry), so balance the sweetness with acid (vinegar or lemon juice) and Dijon mustard. Reduce longer than you would a dry wine to cook off sugar. Avoid adding sugar, honey, or sweet glazes elsewhere in the dish. The sauce also pairs well with pork. For a bolder flavor, add chili flakes or balsamic vinegar to the sauce.",
+  "source_conversation": "Chicken_pan_sauce_recipe_74.json"
+}

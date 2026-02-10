@@ -1,0 +1,77 @@
+{
+  "title": "Pan-Seared Chicken with Garlic Parmesan Cream Sauce",
+  "category": "chicken",
+  "prep_time": 10,
+  "cook_time": 15,
+  "portion_count": "2 servings",
+  "ingredients": [
+    {
+      "name": "chicken breasts or thighs",
+      "amount": "2"
+    },
+    {
+      "name": "butter",
+      "amount": "2 tbsp"
+    },
+    {
+      "name": "garlic, minced",
+      "amount": "3 cloves"
+    },
+    {
+      "name": "heavy cream",
+      "amount": "1/2 cup"
+    },
+    {
+      "name": "grated Parmesan cheese",
+      "amount": "1/4 cup"
+    },
+    {
+      "name": "Italian seasoning",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "salt",
+      "amount": "to taste"
+    },
+    {
+      "name": "black pepper",
+      "amount": "to taste"
+    },
+    {
+      "name": "lemon juice (optional)",
+      "amount": "1 squeeze"
+    },
+    {
+      "name": "olive or avocado oil",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "garlic powder (for chicken)",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "onion powder (for chicken)",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "paprika (for chicken)",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "dried thyme or oregano (for chicken, optional)",
+      "amount": "1/4 tsp"
+    }
+  ],
+  "directions": [
+    "Pat the chicken dry with a paper towel. Rub with a little oil, then season both sides with salt (1 tsp), black pepper (1/2 tsp), garlic powder, onion powder, paprika, and optional thyme or oregano.",
+    "Pan-sear the chicken over medium-high heat for 4-5 minutes per side until golden brown and cooked through (internal temp: 165°F). Remove and set aside.",
+    "In the same pan, melt butter over medium heat.",
+    "Sauté minced garlic for about 30 seconds until fragrant.",
+    "Pour in heavy cream and stir, scraping up any browned bits from the pan.",
+    "Add Parmesan cheese and Italian seasoning, stirring until the cheese melts and the sauce thickens slightly (about 2 minutes).",
+    "Season with salt, pepper, and a squeeze of lemon juice if desired.",
+    "Serve the sauce over the chicken."
+  ],
+  "notes": "Pairs well with air-fried Parmesan asparagus and mashed potatoes. For a slight kick, add 1/4 tsp cayenne pepper to the chicken seasoning. The sauce is made in the same pan as the chicken to capture the fond (browned bits) for extra flavor.",
+  "source_conversation": "Garlic_Parmesan_Chicken_Sauce_454.json"
+}

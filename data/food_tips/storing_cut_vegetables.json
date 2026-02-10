@@ -1,0 +1,14 @@
+{
+  "title": "Storing Cut Vegetables (Onions and Bell Peppers)",
+  "category": "storage",
+  "items": [
+    {"name": "Half onion storage", "details": "Store cut-side down in an airtight container or tightly wrapped in plastic wrap in the crisper drawer. Leave the skin on if possible. Keeps 5-7 days. Toss if it smells sour or feels slimy."},
+    {"name": "Half onion - do not leave exposed", "details": "Uncovered onion dries out and stinks up the fridge. Never store cut onion at room temperature."},
+    {"name": "Freeze unused onion", "details": "If you won't use the half onion within a few days, dice it and freeze it for cooking later."},
+    {"name": "Sliced bell peppers", "details": "Store in an airtight container or zip-top bag lined with a paper towel to absorb moisture. Keep in the crisper drawer. Lasts 3-5 days, up to 7 if very fresh and kept dry."},
+    {"name": "Bell pepper tips", "details": "Do not wash before storing - wash right before use. Do not leave uncovered or in a loose bag."},
+    {"name": "Freeze bell pepper slices", "details": "Frozen slices work great for stir-fries, fajitas, and omelets, but not for eating raw."}
+  ],
+  "notes": "The paper towel trick for bell peppers is key - moisture is the enemy of freshness for cut peppers. For both onions and peppers, the airtight seal is critical for extending shelf life.",
+  "source_conversation": "Storing_Half_Onion_33.json"
+}

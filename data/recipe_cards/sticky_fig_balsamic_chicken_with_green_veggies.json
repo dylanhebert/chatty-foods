@@ -1,0 +1,81 @@
+{
+  "title": "Sticky Fig Balsamic Chicken with Green Beans and Peppers",
+  "category": "chicken",
+  "prep_time": 10,
+  "cook_time": 30,
+  "portion_count": "4 servings",
+  "ingredients": [
+    {
+      "name": "chicken thighs (bone-in or boneless)",
+      "amount": "4"
+    },
+    {
+      "name": "white onion, sliced",
+      "amount": "1/2"
+    },
+    {
+      "name": "green bell pepper, sliced",
+      "amount": "1"
+    },
+    {
+      "name": "green beans, trimmed",
+      "amount": "1 lb"
+    },
+    {
+      "name": "garlic, minced",
+      "amount": "2 cloves"
+    },
+    {
+      "name": "Black Mission Fig balsamic vinegar",
+      "amount": "2 tbsp"
+    },
+    {
+      "name": "soy sauce",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "honey or brown sugar",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "white wine or chicken broth",
+      "amount": "1/4 cup"
+    },
+    {
+      "name": "olive oil",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "salt",
+      "amount": "3/4 tsp"
+    },
+    {
+      "name": "black pepper",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "smoked paprika (optional)",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "dried thyme or Italian seasoning (optional)",
+      "amount": "1/4 tsp"
+    }
+  ],
+  "directions": [
+    "Season chicken thighs with salt and pepper. Let sit at room temperature while prepping.",
+    "Heat olive oil in a large skillet over medium-high heat.",
+    "Sear chicken thighs about 5 minutes per side until golden. Remove and set aside.",
+    "In the same pan, add sliced onion and green bell pepper. Cook 2-3 minutes.",
+    "Add green beans to the pan with the onion and pepper. Season with salt, pepper, and optional smoked paprika or thyme.",
+    "If green beans are crowded, cover the pan for 3-4 minutes to steam, then uncover and cook 4-5 more minutes, stirring frequently. If no lid, add a splash of water or wine and cook uncovered 8-10 minutes until tender-crisp.",
+    "Once green beans are tender (deep vibrant green, slight snap when bitten, fork pierces easily), stir in garlic.",
+    "Pour in white wine to deglaze the pan, scraping up browned bits.",
+    "Stir in fig balsamic vinegar, soy sauce, and honey. Let simmer 1-2 minutes to thicken slightly.",
+    "Return chicken to the skillet. Spoon sauce over the thighs. Cover and simmer 10-12 minutes until chicken is cooked through and glazed.",
+    "Uncover last 2-3 minutes if you want the sauce thicker.",
+    "Serve over white rice. Optionally garnish with red pepper flakes, crushed nuts (walnuts or pecans), or a drizzle of extra fig balsamic."
+  ],
+  "notes": "Serve over white rice for best results. If using 1 lb of green beans and they cannot lay flat, cover with a lid, foil, baking sheet, or cook uncovered with a splash of water at medium heat. Green beans are done when they have a deep vibrant green color with slight snap and slight blistering. Adding a splash of white wine to rice while cooking ties the flavors together. Can also be served with mashed potatoes or crusty bread.",
+  "source_conversation": "Honey_Garlic_Chicken_Skillet_152.json"
+}

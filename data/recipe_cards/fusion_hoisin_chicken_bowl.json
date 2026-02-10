@@ -1,0 +1,97 @@
+{
+  "title": "Fusion Hoisin Chicken Bowl with Tomato Rice and Stir-Fried Veggies",
+  "category": "chicken",
+  "prep_time": 20,
+  "cook_time": 30,
+  "portion_count": "3-4 servings",
+  "ingredients": [
+    {
+      "name": "boneless chicken thighs",
+      "amount": "1.5 lb"
+    },
+    {
+      "name": "white rice, uncooked",
+      "amount": "1 cup"
+    },
+    {
+      "name": "asparagus",
+      "amount": "1 bunch"
+    },
+    {
+      "name": "white onion, sliced",
+      "amount": "1/2 large"
+    },
+    {
+      "name": "green bell pepper, sliced",
+      "amount": "1"
+    },
+    {
+      "name": "sun-dried tomatoes in olive oil, chopped",
+      "amount": "2-3 tbsp"
+    },
+    {
+      "name": "hoisin sauce",
+      "amount": "3 tbsp (plus extra for pan sauce)"
+    },
+    {
+      "name": "soy sauce",
+      "amount": "1 tbsp (plus extra for pan sauce)"
+    },
+    {
+      "name": "red wine vinegar",
+      "amount": "2 tsp, divided"
+    },
+    {
+      "name": "sun-dried tomato oil (from jar)",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "garlic, minced (or garlic powder)",
+      "amount": "1-2 cloves (or 1/2 tsp)"
+    },
+    {
+      "name": "ginger powder",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "crushed red pepper flakes (optional)",
+      "amount": "1/4 tsp"
+    },
+    {
+      "name": "black pepper",
+      "amount": "to taste"
+    },
+    {
+      "name": "salt",
+      "amount": "to taste"
+    },
+    {
+      "name": "sesame oil (optional)",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "olive oil",
+      "amount": "for cooking"
+    },
+    {
+      "name": "water or chicken broth (for pan sauce)",
+      "amount": "2-3 tbsp"
+    },
+    {
+      "name": "cornstarch (optional, for pan sauce)",
+      "amount": "1/2 tsp"
+    }
+  ],
+  "directions": [
+    "Marinate the chicken: Mix 3 tbsp hoisin sauce, 1 tbsp soy sauce, 1 tsp red wine vinegar, garlic, 1/2 tsp ginger powder, 1/4 tsp crushed red pepper flakes, and cracked black pepper. Coat chicken thighs and marinate 15-30 minutes.",
+    "Cook 1 cup white rice according to package directions. When done, stir in 2-3 chopped sun-dried tomatoes, 1 tbsp sun-dried tomato oil, a pinch of salt, black pepper, and optional chili flakes. Keep warm.",
+    "Trim asparagus ends, toss with olive oil, salt, and pepper. Roast at 425 degrees F for 12-15 minutes until tender with crisp tips.",
+    "Slice white onion and green bell pepper into thin strips. Saute in a pan with 1 tbsp sun-dried tomato oil over medium-high heat for 5-6 minutes until soft and slightly charred. Finish with 1 tsp red wine vinegar and a pinch of salt. Remove from pan.",
+    "In the same pan, sear marinated chicken thighs over medium-high heat until caramelized and cooked through, about 5-7 minutes per side. Slice once done.",
+    "For the quick pan sauce: After removing chicken, keep pan on medium heat. Add 1 tbsp hoisin sauce, 1 tsp soy sauce, 1 tsp red wine vinegar, 2-3 tbsp water or broth, optional 1/2 tsp sesame oil, and pinch of chili flakes. Optionally mix 1/2 tsp cornstarch into the water first for thickening. Scrape the bottom to deglaze. Simmer 1-2 minutes until slightly thickened and glossy.",
+    "Assemble bowls: Layer tomato-infused rice, stir-fried onion and bell pepper, sliced hoisin chicken, and roasted asparagus. Drizzle with pan sauce.",
+    "Optional garnish: sesame seeds, green onions, or extra sun-dried tomato bits."
+  ],
+  "notes": "The pan sauce ties everything together - it is sweet from hoisin, salty from soy, tangy from vinegar, and rich from pan drippings. For more Mediterranean flavor, add oregano to the rice and feta on top. For more Asian flavor, add a splash of soy sauce to the veggie stir-fry. You can bake the chicken at 425 degrees F for 20-25 minutes instead of pan-searing if you prefer hands-off cooking.",
+  "source_conversation": "Hoisin_Chicken_with_Rice_250.json"
+}

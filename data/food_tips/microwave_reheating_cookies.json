@@ -1,0 +1,24 @@
+{
+  "title": "Microwave Reheating Guide for Cookies",
+  "category": "technique",
+  "items": [
+    {
+      "name": "Standard chocolate chip cookie",
+      "details": "Start with 10-15 seconds, check warmth, add a few more seconds in short increments until desired warmth. Avoid overheating to prevent loss of texture."
+    },
+    {
+      "name": "Single attempt (no monitoring)",
+      "details": "15 seconds is a safe conservative estimate for a standard-sized cookie. May be slightly underdone but avoids overheating."
+    },
+    {
+      "name": "Large cookie (frisbee-sized)",
+      "details": "Start with 30-40 seconds as a baseline. Use oven mitts when handling as it may be very hot. Check if it fits in the microwave first."
+    },
+    {
+      "name": "Cookie too large for microwave",
+      "details": "Use a conventional oven or toaster oven instead. These provide better heat distribution for oversized cookies."
+    }
+  ],
+  "notes": "Always start with shorter times and increase gradually. Microwave power varies, so exact times depend on your machine. Monitor closely to prevent overcooking or burning edges.",
+  "source_conversation": "Microwave_Heating_for_Large_Cookie_791.json"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Russet Potato Rinsing, Cubing, and Storage Techniques",
+  "category": "technique",
+  "items": [
+    {"name": "Rinse before cubing", "details": "Always rinse russet potatoes after peeling and before cubing (or before peeling if leaving skin on). Removes surface dirt and grit."},
+    {"name": "Cubing method", "details": "Peel, then slice a flat side so it does not roll. Cut into 3/4 to 1 inch slabs, stack and cut into sticks, then rotate and cut crosswise into cubes. Drop immediately into cold water to prevent browning."},
+    {"name": "Ideal stew cube size", "details": "3/4 to 1 inch cubes. Big enough to stay intact during a long simmer, small enough to cook through evenly."},
+    {"name": "Sizing russets", "details": "Medium russet is about 5-7 oz. Large russet is about 10-12+ oz. 2 large russets equal roughly 4 medium."},
+    {"name": "Short-term storage for cut potatoes", "details": "Submerge completely in cold water in a sealed container in the fridge. Keeps 24-48 hours. Pat dry before cooking."},
+    {"name": "Freezing cut potatoes", "details": "Peel, cube, blanch in boiling water for 2 minutes, transfer to ice water for 3-5 minutes until fully cooled, drain well, freeze individually on a baking sheet for 30-60 minutes, then transfer to a freezer bag. Lasts 2-3 months."},
+    {"name": "Using frozen potatoes", "details": "Toss straight into soups, stews, or breakfast potatoes. No thawing needed."}
+  ],
+  "notes": "Cold water prevents oxidation (browning) and draws out starch for cleaner broth. Always blanch before freezing for best results. Potato skins do not freeze well once cut.",
+  "source_conversation": "Rinse_potatoes_before_cubing_53.json"
+}

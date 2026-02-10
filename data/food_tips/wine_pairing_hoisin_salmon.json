@@ -1,0 +1,10 @@
+{
+  "title": "Wine Pairing for Hoisin-Glazed Salmon",
+  "category": "pairing",
+  "items": [
+    {"name": "Chardonnay (recommended)", "details": "Richer body stands up nicely to the savory-sweet hoisin glaze on salmon. Best choice for this meal."},
+    {"name": "Sauvignon Blanc", "details": "Also works well but lighter. A good alternative if you prefer something crisper."}
+  ],
+  "notes": "Meal: Hoisin-glazed salmon with white rice and asparagus with parmesan. Chardonnay is the preferred pairing due to its richer body complementing the savory-sweet glaze.",
+  "source_conversation": "Wine_pairing_advice_32.json"
+}

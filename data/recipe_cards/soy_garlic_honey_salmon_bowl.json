@@ -1,0 +1,71 @@
+{
+  "title": "Soy Garlic Honey Salmon Bowl",
+  "category": "seafood",
+  "prep_time": 10,
+  "cook_time": 12,
+  "portion_count": "2 servings",
+  "ingredients": [
+    {
+      "name": "salmon fillets",
+      "amount": "2 (6 oz each)"
+    },
+    {
+      "name": "soy sauce",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "honey or brown sugar",
+      "amount": "1 tsp"
+    },
+    {
+      "name": "olive oil",
+      "amount": "1 tsp"
+    },
+    {
+      "name": "garlic, minced (or garlic powder)",
+      "amount": "1 clove (or 1/2 tsp)"
+    },
+    {
+      "name": "black pepper",
+      "amount": "1/4 tsp"
+    },
+    {
+      "name": "chili flakes (optional)",
+      "amount": "pinch"
+    },
+    {
+      "name": "white rice, cooked",
+      "amount": "2 cups"
+    },
+    {
+      "name": "mixed vegetables for sauteing",
+      "amount": "2 cups"
+    },
+    {
+      "name": "sriracha mayo",
+      "amount": "for drizzling"
+    },
+    {
+      "name": "sesame seeds (optional)",
+      "amount": "for garnish"
+    },
+    {
+      "name": "green onion (optional)",
+      "amount": "for garnish"
+    },
+    {
+      "name": "lime (optional)",
+      "amount": "1 wedge"
+    }
+  ],
+  "directions": [
+    "Mix soy sauce, honey, olive oil, minced garlic, black pepper, and optional chili flakes in a small bowl. Brush all over the salmon.",
+    "For oven method: Preheat to 425F. Line a baking tray with foil. Place salmon skin-side down, pour any leftover marinade on top. Bake 10-12 minutes until the thickest part flakes but is still glossy inside. Optionally broil for the last 1 minute for char.",
+    "For pan-sear method: Heat a pan with a thin layer of oil over medium-high. Sear salmon skin-side down for about 4 minutes. Flip, drop heat to medium, spoon leftover marinade on top, cook 2-3 more minutes.",
+    "Saute vegetables with salt, pepper, and a splash of soy sauce.",
+    "Assemble bowl: Rice on the bottom, top with warm sauteed veggies, then flake salmon into chunks on top.",
+    "Drizzle with sriracha mayo. Garnish with sesame seeds, green onion, and a squeeze of lime."
+  ],
+  "notes": "The soy-garlic-honey-chili seasoning profile pairs perfectly with sriracha mayo and vegetables. Two cooking methods offered: oven (425F, 10-12 min) or pan-sear (quicker, crispier). For extra punch, a spicy glaze can be added.",
+  "source_conversation": "Salmon_bowl_seasoning_tips_54.json"
+}

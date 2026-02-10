@@ -1,0 +1,14 @@
+{
+  "title": "Salmon Pan-Cooking Temperature Tips (Stainless Steel)",
+  "category": "technique",
+  "items": [
+    {"name": "Pan surface temperature", "details": "Should be around 400-425F. Set stove to medium-high, not medium."},
+    {"name": "Oil readiness test", "details": "Oil should be shimmering and just barely starting to smoke. If it sits there looking calm, the pan is too cold."},
+    {"name": "Stainless steel preheat", "details": "Let the empty pan heat 2-3 full minutes on medium-high before adding oil. Stainless holds heat well once hot but heats up slower than nonstick."},
+    {"name": "Sear technique", "details": "Lay salmon in away from you. Should hear an immediate confident sizzle. Do not move the salmon early - it will release on its own once the crust forms (usually 3-4 minutes skin-side down)."},
+    {"name": "Internal temperature to remove", "details": "Pull salmon off at 120-125F internal (measured at thickest part). It will coast up to 130-135F while resting."},
+    {"name": "Temperature guide", "details": "120-125F = medium, best texture. 130-135F = fully done but still good. 140F+ = dry, avoid."}
+  ],
+  "notes": "Salmon forgives nothing once overcooked. Pull it early and let carryover cooking finish the job. Stainless steel requires more aggressive preheating than nonstick pans.",
+  "source_conversation": "Salmon_Cooking_Tips_14.json"
+}

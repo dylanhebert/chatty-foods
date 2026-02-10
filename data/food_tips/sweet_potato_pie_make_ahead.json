@@ -1,0 +1,13 @@
+{
+  "title": "Sweet Potato Pie Make-Ahead Storage",
+  "category": "storage",
+  "items": [
+    {"name": "Make-ahead timing", "details": "Can be baked 2 days before serving (e.g., Tuesday night before Thanksgiving). Flavors often deepen over time."},
+    {"name": "Cooling", "details": "Let the pie cool completely at room temperature after baking to prevent condensation when wrapping."},
+    {"name": "Wrapping", "details": "Cover tightly with plastic wrap or foil, or store in an airtight container."},
+    {"name": "Refrigeration", "details": "Sweet potato pie lasts 3-4 days when properly refrigerated."},
+    {"name": "Reheating", "details": "Serve cold, at room temperature, or warm gently in the oven at 300F for 10-15 minutes to refresh."}
+  ],
+  "notes": "Sweet potato pie is an ideal make-ahead Thanksgiving dish.",
+  "source_conversation": "Baking_Pie_in_Advance_545.json"
+}

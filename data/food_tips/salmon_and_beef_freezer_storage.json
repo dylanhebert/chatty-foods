@@ -1,0 +1,16 @@
+{
+  "title": "Salmon and Beef Freezer Storage Guide",
+  "category": "storage",
+  "items": [
+    {"name": "Raw salmon", "details": "Up to 2-3 months for best quality. Can stay safe up to 6 months if sealed airtight."},
+    {"name": "Cooked salmon", "details": "About 2-3 months frozen before flavor and texture start to degrade."},
+    {"name": "Raw beef steaks or roasts", "details": "Up to 6-12 months in the freezer."},
+    {"name": "Raw ground beef", "details": "Best within 3-4 months."},
+    {"name": "Cooked beef", "details": "About 2-3 months for best quality."},
+    {"name": "Wrapping method", "details": "Wrap tightly in plastic or vacuum seal before freezing. Double wrapping (plastic + freezer bag) or vacuum sealing prevents freezer burn."},
+    {"name": "Freezer temperature", "details": "Store at 0F (-18C) or below."},
+    {"name": "Thawing method", "details": "Thaw in the fridge overnight. Do not thaw at room temperature."}
+  ],
+  "notes": "Vacuum sealing provides the best protection against freezer burn and extends quality. Always label with the date before freezing.",
+  "source_conversation": "Salmon_fridge_lifespan_84.json"
+}

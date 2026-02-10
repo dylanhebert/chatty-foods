@@ -1,0 +1,64 @@
+{
+  "title": "Mac and Cheese Seasoning Boosters",
+  "category": "tip",
+  "items": [
+    {
+      "name": "Savory & Bold: garlic powder",
+      "details": "A classic addition that enhances the cheese flavor."
+    },
+    {
+      "name": "Savory & Bold: onion powder",
+      "details": "Adds depth without the texture of fresh onion."
+    },
+    {
+      "name": "Savory & Bold: smoked paprika",
+      "details": "Adds a deeper, almost bacon-like edge to the mac and cheese."
+    },
+    {
+      "name": "Savory & Bold: coarse black pepper",
+      "details": "More bite than fine ground pepper."
+    },
+    {
+      "name": "Savory & Bold: mustard powder",
+      "details": "Subtle tang that enhances the cheese flavor."
+    },
+    {
+      "name": "Spicy: cayenne pepper or red pepper flakes",
+      "details": "For a kick of heat."
+    },
+    {
+      "name": "Spicy: hot sauce",
+      "details": "Cholula, Frank's, or Tabasco all work well."
+    },
+    {
+      "name": "Spicy: chipotle powder",
+      "details": "Adds smoky and spicy notes."
+    },
+    {
+      "name": "Umami boost: Worcestershire sauce",
+      "details": "Just a dash adds savory depth."
+    },
+    {
+      "name": "Umami boost: soy sauce",
+      "details": "Surprisingly good in small amounts."
+    },
+    {
+      "name": "Umami boost: grated parmesan",
+      "details": "Adds salt and depth."
+    },
+    {
+      "name": "Umami boost: truffle oil",
+      "details": "Fancy upgrade, but works well."
+    },
+    {
+      "name": "Herby/Fresh: chives, parsley, basil, or thyme",
+      "details": "Basil pairs well if adding tomatoes or meat. Thyme is good if baking the mac afterward."
+    },
+    {
+      "name": "Quick weeknight combo",
+      "details": "Garlic powder + smoked paprika + black pepper. Add cayenne or hot sauce for heat."
+    }
+  ],
+  "notes": "Works specifically with Kraft Original Cheddar Mac & Cheese but these seasonings apply to any boxed or homemade mac and cheese. The mild, creamy base takes well to all of these additions.",
+  "source_conversation": "Mac_and_Cheese_Boosters_334.json"
+}

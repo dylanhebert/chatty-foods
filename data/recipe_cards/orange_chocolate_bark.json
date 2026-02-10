@@ -1,0 +1,35 @@
+{
+  "title": "Orange Chocolate Bark (Mini-Batch)",
+  "category": "dessert",
+  "prep_time": 5,
+  "cook_time": 2,
+  "portion_count": "1 serving",
+  "ingredients": [
+    {
+      "name": "chocolate chips",
+      "amount": "1/4 cup"
+    },
+    {
+      "name": "cutie orange",
+      "amount": "1"
+    },
+    {
+      "name": "salt",
+      "amount": "pinch"
+    },
+    {
+      "name": "chopped nuts (optional)",
+      "amount": "1 tbsp"
+    }
+  ],
+  "directions": [
+    "Melt 1/4 cup chocolate chips in the microwave in short bursts, stirring between each.",
+    "Zest the cutie or dice a few segments very finely.",
+    "Stir the zest or diced pieces into the melted chocolate.",
+    "Spread thin on parchment paper.",
+    "Sprinkle with a pinch of salt or chopped nuts.",
+    "Chill until firm, then break into shards."
+  ],
+  "notes": "Crunchy and citrusy. A mini-batch bark that is quick to make with minimal ingredients. Great for satisfying a chocolate-orange craving.",
+  "source_conversation": "Quick_Chocolate_Orange_Desserts_319.json"
+}

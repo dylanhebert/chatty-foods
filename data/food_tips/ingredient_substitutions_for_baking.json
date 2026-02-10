@@ -1,0 +1,28 @@
+{
+  "title": "Ingredient Substitutions for Baking",
+  "category": "substitution",
+  "items": [
+    {
+      "name": "Coconut sugar substitute",
+      "details": "Replace with equal amount of brown sugar. Similar moisture content and sweetness level, works well without affecting texture."
+    },
+    {
+      "name": "Pumpkin pie spice substitute",
+      "details": "Per 1 tsp pumpkin pie spice: use 1/2 tsp cinnamon, 1/4 tsp nutmeg, 1/8 tsp ginger, 1/8 tsp cloves."
+    },
+    {
+      "name": "Pink salt substitute",
+      "details": "Standard table salt or sea salt in the same amount. Minimal flavor impact and no effect on baking process."
+    },
+    {
+      "name": "Oat flour substitute",
+      "details": "Equal amount of all-purpose flour (if gluten is OK). For gluten-free: almond flour or GF all-purpose blend, though almond flour gives a slightly denser texture."
+    },
+    {
+      "name": "Melted coconut oil note",
+      "details": "Recipes call for melted coconut oil because it is solid at room temperature and needs to be liquid to blend smoothly. If you have liquid coconut oil in a bottle, skip the melting step and use it directly."
+    }
+  ],
+  "notes": "These substitutions are especially useful for banana-based baking bars that call for coconut sugar, oat flour, pumpkin pie spice, pink salt, and melted coconut oil with maple syrup.",
+  "source_conversation": "Ingredient_Substitutions_for_Baking_562.json"
+}

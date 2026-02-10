@@ -1,0 +1,14 @@
+{
+  "title": "Ginger Paste Substitutes",
+  "category": "substitution",
+  "items": [
+    {"name": "Fresh ginger", "details": "Grate or finely chop. Use the same amount as the recipe calls for in ginger paste (1:1 ratio)."},
+    {"name": "Ground ginger", "details": "Use about 1/4 of the amount of ginger paste called for (e.g., 1 tsp paste = 1/4 tsp ground ginger)."},
+    {"name": "Ginger powder", "details": "Same as ground ginger: use about 1/4 tsp per teaspoon of ginger paste."},
+    {"name": "Minced or crushed ginger in a jar", "details": "A convenient swap that can be used in a 1:1 ratio."},
+    {"name": "Ginger juice", "details": "Extract juice from fresh ginger by grating and pressing. Use in the same amount as the paste."},
+    {"name": "Ginger-garlic paste", "details": "Works if the recipe also calls for garlic. Adjust other garlic quantities to balance the flavor."}
+  ],
+  "notes": "Conversion example: If a recipe needs 1/2 tbsp ginger paste, substitute with 1/2 tsp ground ginger.",
+  "source_conversation": "Ginger_Paste_Substitutes_467.json"
+}

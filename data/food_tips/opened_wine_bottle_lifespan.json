@@ -1,0 +1,11 @@
+{
+  "title": "How Long Opened Wine Bottles Last",
+  "category": "storage",
+  "items": [
+    {"name": "Red wine", "details": "Lasts up to 5 days if stored properly. Reseal and refrigerate."},
+    {"name": "White and rose wine", "details": "Lasts about 3-4 days. Reseal and store in the fridge."},
+    {"name": "Sparkling wine", "details": "Shortest shelf life at only 1-3 days before losing carbonation."}
+  ],
+  "notes": "Always reseal the bottle and store it in the fridge to maximize its lifespan after opening.",
+  "source_conversation": "Wine_Bottle_Lifespan_5_Days_695.json"
+}

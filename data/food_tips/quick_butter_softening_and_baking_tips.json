@@ -1,0 +1,13 @@
+{
+  "title": "Quick Butter Softening and Baking Tips",
+  "category": "technique",
+  "items": [
+    {"name": "Cut into small cubes", "details": "Cut butter into small cubes to increase surface area, allowing it to warm up faster. Place in a warm (not hot) spot like near your oven. Takes about 10-15 minutes."},
+    {"name": "Warm water bath method", "details": "Place cut-up butter in a bowl floating in hot water. Make sure the water is not too hot so the butter softens without melting. Keep an eye on it."},
+    {"name": "Orange and chocolate pairing", "details": "Orange and chocolate make a fantastic combination. The bright citrusy flavor pairs perfectly with the rich, deep taste of chocolate. Works great in cookies, cakes, and chocolate-covered orange peels."},
+    {"name": "Chocolate chips for orange cookies", "details": "Dark chocolate chips are the best choice for orange cookies - the slight bitterness complements the sweet citrusy flavor. Semi-sweet chocolate chips also work well for a milder taste."},
+    {"name": "Baking powder in cookies", "details": "Baking powder helps cookies rise and become fluffy by releasing carbon dioxide gas when heated. This creates air pockets, giving cookies a lighter texture. Especially useful for softer, cakier cookies."}
+  ],
+  "notes": "This conversation covered multiple baking topics: butter softening techniques, orange-chocolate flavor pairing for cookies, and the role of baking powder in cookie texture.",
+  "source_conversation": "Quick_Butter_Softening_Tips_470.json"
+}

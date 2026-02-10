@@ -1,0 +1,44 @@
+{
+  "title": "Savory Herb Butter Croissants",
+  "category": "breakfast",
+  "prep_time": 5,
+  "cook_time": 15,
+  "portion_count": "8 croissants (1 can Pillsbury)",
+  "ingredients": [
+    {
+      "name": "Pillsbury crescent roll dough",
+      "amount": "1 can (8 rolls)"
+    },
+    {
+      "name": "melted butter",
+      "amount": "2 tbsp"
+    },
+    {
+      "name": "garlic powder",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "onion powder",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "black pepper",
+      "amount": "1/4 tsp"
+    },
+    {
+      "name": "shredded cheese (optional, for topping)",
+      "amount": "1/4 cup"
+    }
+  ],
+  "directions": [
+    "Preheat oven according to Pillsbury package directions.",
+    "Melt butter and mix in garlic powder, onion powder, and black pepper.",
+    "Unroll the crescent dough and separate into triangles.",
+    "Brush the herb butter mixture on top of each triangle.",
+    "Roll up the crescents per package instructions and place on a baking sheet.",
+    "Bake as directed on the package.",
+    "If adding cheese, sprinkle on top during the last 3 minutes of baking."
+  ],
+  "notes": "Another savory variation: place a thin strip of cheese (like Colby Jack) inside before rolling for gooey centers. For an everything bagel version, brush with egg wash or milk and sprinkle everything bagel seasoning before baking.",
+  "source_conversation": "Spicing_up_croissants_60.json"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Parmesan Fridge Storage Tips",
+  "category": "storage",
+  "items": [
+    {"name": "Opened block (refrigerated)", "details": "Lasts about 4-6 weeks in the fridge when stored properly. Parmesan has low moisture content and is aged, making it more resistant to spoilage than softer cheeses."},
+    {"name": "Wrapping method", "details": "Wrap tightly in wax paper or parchment paper, then cover with plastic wrap or place in an airtight container."},
+    {"name": "Best fridge location", "details": "Store in the coldest part of the fridge, typically the back of the bottom shelf."},
+    {"name": "Mold handling", "details": "If you see mold, cut off about an inch around the affected area and the rest should still be fine."},
+    {"name": "Frozen grated Parmesan", "details": "Can be grated and frozen for up to 6 months without losing much flavor."}
+  ],
+  "notes": "Parmesan is one of the more resilient cheeses for storage due to its low moisture and aging process.",
+  "source_conversation": "Parmesan_fridge_storage_tips_499.json"
+}

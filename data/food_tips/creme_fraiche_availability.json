@@ -1,0 +1,10 @@
+{
+  "title": "Creme Fraiche: Buying and Making",
+  "category": "substitution",
+  "items": [
+    {"name": "Store-bought", "details": "Available at many grocery stores, usually found near the sour cream or specialty dairy products section."},
+    {"name": "Homemade alternative", "details": "Mix heavy cream with a bit of buttermilk and let it sit at room temperature until thickened (usually 12-24 hours)."}
+  ],
+  "notes": "If you cannot find creme fraiche in the dairy aisle, check the specialty cheese or international foods section. Making it at home requires only heavy cream and buttermilk.",
+  "source_conversation": "Crème_Fraîche_Availability_469.json"
+}

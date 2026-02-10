@@ -1,0 +1,11 @@
+{
+  "title": "Storing Washed Whole Carrots",
+  "category": "storage",
+  "items": [
+    {"name": "Water submersion method", "details": "Place washed whole carrots in a container or resealable bag with enough water to fully submerge or at least keep them moist. Store in the fridge."},
+    {"name": "Change water regularly", "details": "Change the water every few days to keep the carrots fresh."},
+    {"name": "Shelf life", "details": "This method keeps carrots crisp for up to 2 weeks."}
+  ],
+  "notes": "Since the carrots are already washed, the water submersion method is the best approach. The water maintains crispness and prevents the carrots from drying out. Regular water changes prevent bacterial growth.",
+  "source_conversation": "Storing_Washed_Carrots_274.json"
+}

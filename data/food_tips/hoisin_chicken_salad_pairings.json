@@ -1,0 +1,16 @@
+{
+  "title": "Hoisin Chicken Salad Pairings and Dressing Guide",
+  "category": "pairing",
+  "items": [
+    {"name": "Asian Slaw Salad", "details": "Napa cabbage, shredded carrots, red bell pepper, green onions, cilantro, toasted sesame seeds, chopped peanuts. Dress with rice vinegar, sesame oil, lime juice, and a touch of honey or soy."},
+    {"name": "Cold Noodle Salad", "details": "Rice or soba noodles, cucumber, julienned carrots, bean sprouts, scallions. Dress with lime juice, soy sauce, sesame oil, garlic, and chili flakes."},
+    {"name": "Mixed Greens with Crunch", "details": "Arugula, romaine, or spring mix with mandarin oranges, shredded carrots, crispy wonton strips, sliced radish. Dress with ginger-sesame or citrus-soy vinaigrette."},
+    {"name": "Thai-Inspired Salad", "details": "Shredded cabbage and romaine with basil, mint, cucumber, chopped peanuts. Dress with fish sauce, lime, sugar, chili, garlic, or simplified with Thai peanut dressing."},
+    {"name": "Quinoa and Veggie Bowl", "details": "Cooked quinoa with shredded kale or spinach, edamame, red cabbage, diced red peppers. Dress with soy-lime vinaigrette or miso-ginger dressing."},
+    {"name": "Balsamic fusion option", "details": "If using avocado, mini bell peppers, and feta with hoisin chicken, modify the dressing: 2 tbsp balsamic vinegar, 1 tbsp soy sauce, 1 tsp sesame oil, 2 tbsp olive oil, 1 tsp honey or hoisin. This bridges balsamic and hoisin flavors."},
+    {"name": "Creamy Sesame Dressing (ranch alternative)", "details": "2 tbsp mayo or Greek yogurt, 1 tbsp tahini or peanut butter, 1 tsp soy sauce, 1 tsp rice vinegar, 1 tsp honey, optional garlic/sesame oil/lime juice. Works as a creamy option instead of ranch."},
+    {"name": "Creamy Cilantro-Lime Dressing", "details": "Greek yogurt or sour cream base with lime juice, garlic, cilantro, a tiny splash of honey or agave, salt, and a pinch of chili flakes."}
+  ],
+  "notes": "Avoid pairing hoisin chicken with straight balsamic vinaigrette or ranch dressing - the flavors clash. Hoisin is sweet and savory with Chinese flavor notes, so pair with dressings that have Asian elements (sesame, soy, lime, ginger). If not using hoisin on the chicken, Mediterranean-style seasonings (oregano, thyme, garlic, lemon, smoked paprika) work great with feta and balsamic salads.",
+  "source_conversation": "Hoisin_Chicken_Salad_Pairings_247.json"
+}

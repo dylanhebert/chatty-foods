@@ -1,0 +1,17 @@
+{
+  "title": "Basil Plant Care and Harvesting Guide",
+  "category": "technique",
+  "items": [
+    {"name": "When to harvest", "details": "Start when the plant is at least 6-8 inches tall with multiple layers of leaves and sturdy stems."},
+    {"name": "Where to cut", "details": "Pinch or cut stems just above a leaf node (the 'V' where two leaves grow opposite each other), about 1/2 inch above the pair. This encourages branching and makes the plant bushier."},
+    {"name": "How much to take", "details": "Never remove more than 1/3 of the plant at a time. Wait about a week between big harvests."},
+    {"name": "Pinch flowers immediately", "details": "If flower buds appear, pinch them off right away. Flowering makes leaves bitter and slows new growth."},
+    {"name": "Light needs", "details": "Basil loves sun -- aim for 6+ hours of direct sunlight daily. A sunny window or outdoors in warm weather."},
+    {"name": "Watering", "details": "Water when the top inch of soil feels dry. Water at the base, not over the leaves. Don't let it sit in standing water."},
+    {"name": "Regular pruning", "details": "Trim regularly even if you don't need the leaves, so the plant keeps producing new stems."},
+    {"name": "Fertilizer", "details": "Feed every 4-6 weeks with a balanced liquid fertilizer to keep it vigorous."},
+    {"name": "Harvesting pattern", "details": "Pick from the top, not the bottom. Harvest from multiple stems so the plant stays even. Cut above leaf pairs to promote two new branches from each cut."}
+  ],
+  "notes": "A small pair of shears works well for harvesting. The key to having fresh basil for months instead of weeks is regular pruning above leaf nodes to encourage bushy growth rather than tall, leggy stems.",
+  "source_conversation": "Basil_care_and_harvesting_170.json"
+}

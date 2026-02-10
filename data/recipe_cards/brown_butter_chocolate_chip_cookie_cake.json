@@ -1,0 +1,65 @@
+{
+  "title": "Brown Butter Chocolate Chip Cookie Cake",
+  "category": "dessert",
+  "prep_time": 20,
+  "cook_time": 30,
+  "portion_count": "8-10 servings",
+  "ingredients": [
+    {
+      "name": "all-purpose flour",
+      "amount": "2 cups (284g)"
+    },
+    {
+      "name": "baking powder",
+      "amount": "1 tsp"
+    },
+    {
+      "name": "baking soda",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "salt",
+      "amount": "1/2 tsp"
+    },
+    {
+      "name": "unsalted butter (for browning)",
+      "amount": "12 tbsp (170g)"
+    },
+    {
+      "name": "granulated sugar",
+      "amount": "1/2 cup (150g)"
+    },
+    {
+      "name": "brown sugar",
+      "amount": "1/2 cup (150g)"
+    },
+    {
+      "name": "pure vanilla extract",
+      "amount": "1 tbsp"
+    },
+    {
+      "name": "large egg plus 1 large yolk",
+      "amount": "1 egg + 1 yolk"
+    },
+    {
+      "name": "bittersweet chocolate (chopped into bits)",
+      "amount": "8 oz (226g)"
+    },
+    {
+      "name": "fleur de sel (optional, for finishing)",
+      "amount": "to taste"
+    }
+  ],
+  "directions": [
+    "Preheat oven to 325F. Grease a 10-inch cookie cake pan and line the bottom with parchment paper.",
+    "Whisk together flour, baking powder, and baking soda in a bowl.",
+    "Slice butter into four pieces and melt 8 tbsp (113g) in a medium skillet over medium-high heat. Brown the butter until dark golden with nutty aroma (2-3 minutes). Pour into a large bowl with the remaining 4 tbsp butter and stir until all butter is melted and combined.",
+    "Stir in both sugars, vanilla, and salt with a rubber spatula until combined. Whisk in the egg and yolk until smooth and glossy (about 45 seconds). Let batter sit for 2-3 minutes, then whisk again for 45 seconds.",
+    "Pour flour mixture into the bowl and use a spatula to combine until all dry ingredients are incorporated. Place chopped chocolate over the dough and knead until evenly distributed.",
+    "Weigh out about 650g of dough and press evenly into the prepared pan to about 3/4 to 1 inch thick. Freeze any remaining dough in cookie-sized scoops for later.",
+    "Bake at 325F for 25-35 minutes. For gooey center, pull when center is just set and slightly jiggly. For firmer, sliceable cake, bake until a toothpick comes out with just a few moist crumbs.",
+    "Let cool in the pan for at least 15-20 minutes before removing. Sprinkle with flaky sea salt while still warm."
+  ],
+  "notes": "This recipe is adapted from a brown butter chocolate chip cookie recipe for a 10-inch cookie cake. Bake at 325F (not the cookie recipe's 350F) to ensure the center cooks without overbrowning the edges. Total dough makes about 900g - use 650g for the pan and freeze the rest as individual cookies. The dough should be about 3/4 to 1 inch thick before baking. Run a thin knife around the edges before removing from pan. For overnight storage, wrap tightly to keep soft and gooey.",
+  "source_conversation": "Cookie_cake_recipe_tips_143.json"
+}
