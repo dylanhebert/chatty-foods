@@ -5,13 +5,13 @@
 
 {% block content %}
 <div class="mb-4">
-    <a href="/recipes" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Back to recipes</a>
+    <a href="/recipes" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm border border-gray-200 dark:border-gray-700 text-emerald-600 dark:text-emerald-400 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors">&larr; Back to recipes</a>
 </div>
 
 <h1 class="text-3xl font-bold mb-4">{{ recipe.title }}</h1>
 
 <div class="flex flex-wrap gap-3 mb-8">
-    <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 capitalize">{{ recipe.category }}</span>
+    <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 capitalize">{{ recipe.category }}</span>
     <span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         Prep: {{ recipe.prep_time }} min
@@ -43,16 +43,16 @@
         <ol class="space-y-3">
             {% for step in directions %}
             <li class="flex gap-3 text-sm">
-                <span class="shrink-0 w-6 h-6 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 flex items-center justify-center text-xs font-semibold">{{ loop.index }}</span>
+                <span class="shrink-0 w-6 h-6 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 flex items-center justify-center text-xs font-semibold">{{ loop.index }}</span>
                 <span class="pt-0.5">{{ step }}</span>
             </li>
             {% endfor %}
         </ol>
 
         {% if recipe.notes %}
-        <div class="mt-8 p-4 rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/40">
-            <h3 class="text-sm font-semibold text-amber-800 dark:text-amber-300 mb-1">Notes</h3>
-            <p class="text-sm text-amber-900 dark:text-amber-200/80">{{ recipe.notes }}</p>
+        <div class="mt-8 p-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/40">
+            <h3 class="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-1">Notes</h3>
+            <p class="text-sm text-blue-900 dark:text-blue-200/80">{{ recipe.notes }}</p>
         </div>
         {% endif %}
     </div>

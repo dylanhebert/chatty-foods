@@ -5,13 +5,13 @@
 
 {% block content %}
 <div class="mb-4">
-    <a href="/tips" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Back to tips</a>
+    <a href="/tips" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm border border-gray-200 dark:border-gray-700 text-emerald-600 dark:text-emerald-400 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors">&larr; Back to tips</a>
 </div>
 
 <h1 class="text-3xl font-bold mb-4">{{ tip.title }}</h1>
 
 <div class="mb-8">
-    <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 capitalize">{{ tip.category }}</span>
+    <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 capitalize">{{ tip.category }}</span>
 </div>
 
 <div class="space-y-4">
@@ -24,9 +24,9 @@
 </div>
 
 {% if tip.notes %}
-<div class="mt-8 p-4 rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/40">
-    <h3 class="text-sm font-semibold text-amber-800 dark:text-amber-300 mb-1">Notes</h3>
-    <p class="text-sm text-amber-900 dark:text-amber-200/80">{{ tip.notes }}</p>
+<div class="mt-8 p-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/40">
+    <h3 class="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-1">Notes</h3>
+    <p class="text-sm text-blue-900 dark:text-blue-200/80">{{ tip.notes }}</p>
 </div>
 {% endif %}
 {% endblock %}
