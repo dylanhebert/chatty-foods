@@ -311,6 +311,22 @@ def edit_tip(tip_id):
     return redirect(url_for("tip", tip_id=tip_id))
 
 
+@app.route("/recipes/<int:recipe_id>/delete", methods=["POST"])
+@require_admin
+@check_csrf
+def delete_recipe(recipe_id):
+    db.delete_recipe(recipe_id)
+    return redirect(url_for("recipes"))
+
+
+@app.route("/tips/<int:tip_id>/delete", methods=["POST"])
+@require_admin
+@check_csrf
+def delete_tip(tip_id):
+    db.delete_tip(tip_id)
+    return redirect(url_for("tips"))
+
+
 # --- API routes ---
 
 

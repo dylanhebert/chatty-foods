@@ -267,6 +267,20 @@ def update_tip(tip_id, data):
     conn.close()
 
 
+def delete_recipe(recipe_id):
+    conn = get_db()
+    conn.execute("DELETE FROM recipe_cards WHERE id=?", (recipe_id,))
+    conn.commit()
+    conn.close()
+
+
+def delete_tip(tip_id):
+    conn = get_db()
+    conn.execute("DELETE FROM food_tips WHERE id=?", (tip_id,))
+    conn.commit()
+    conn.close()
+
+
 def export_all():
     conn = get_db()
     recipes = conn.execute(

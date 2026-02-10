@@ -102,6 +102,16 @@
         <a href="/tips/{{ tip.id }}" class="px-4 py-2.5 rounded-lg text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Cancel</a>
     </div>
 </form>
+
+<!-- Delete -->
+<form method="POST" action="/tips/{{ tip.id }}/delete" class="max-w-3xl mt-8 pt-6 border-t border-gray-200 dark:border-gray-800"
+    onsubmit="return confirm('Delete this tip? This cannot be undone.')">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <button type="submit"
+        class="px-4 py-2 rounded-lg text-sm text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+        Delete tip
+    </button>
+</form>
 {% endblock %}
 
 {% block scripts %}
