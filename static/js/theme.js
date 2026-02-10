@@ -1,11 +1,4 @@
-// Apply theme immediately to prevent flash
-(function () {
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-        document.documentElement.classList.add("dark");
-    }
-})();
-
+// Theme toggle setup (dark class is applied inline in base.html to prevent flash)
 document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.getElementById("theme-toggle");
     const iconLight = document.getElementById("theme-icon-light");

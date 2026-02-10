@@ -11,17 +11,17 @@
 <h1 class="text-3xl font-bold mb-4">{{ recipe.title }}</h1>
 
 <div class="flex flex-wrap gap-3 mb-8">
-    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 capitalize">{{ recipe.category }}</span>
-    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+    <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 capitalize">{{ recipe.category }}</span>
+    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         Prep: {{ recipe.prep_time }} min
     </span>
-    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
         Cook: {{ recipe.cook_time }} min
     </span>
     {% if recipe.portion_count %}
-    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">{{ recipe.portion_count }}</span>
+    <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">{{ recipe.portion_count }}</span>
     {% endif %}
 </div>
 
@@ -43,7 +43,7 @@
         <ol class="space-y-3">
             {% for step in directions %}
             <li class="flex gap-3 text-sm">
-                <span class="shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 flex items-center justify-center text-xs font-semibold">{{ loop.index }}</span>
+                <span class="shrink-0 w-6 h-6 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 flex items-center justify-center text-xs font-semibold">{{ loop.index }}</span>
                 <span class="pt-0.5">{{ step }}</span>
             </li>
             {% endfor %}

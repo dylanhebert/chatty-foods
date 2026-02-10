@@ -2,7 +2,8 @@
 
 {% block content %}
 <div class="max-w-2xl mx-auto mb-12">
-    <h1 class="text-3xl font-bold text-center mb-6">Chatty Foods</h1>
+    <h1 class="text-3xl font-bold text-center mb-3">Chatty Foods</h1>
+    <p class="text-center text-sm text-gray-500 dark:text-gray-400 mb-6">Recipes and food tips collected from cooking conversations with AI.</p>
     <form action="/search" method="get">
         <div class="relative">
             <input type="text" name="q" placeholder="Search recipes and tips..."
@@ -24,34 +25,38 @@
 
 <div class="grid md:grid-cols-2 gap-8">
     <div>
-        <div class="flex items-center justify-between mb-4">
-            <h2 class="text-xl font-semibold">Recipes</h2>
-            <a href="/recipes" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">View all</a>
-        </div>
-        <div class="flex flex-wrap gap-2">
-            {% for cat in recipe_categories %}
-            <a href="/recipes?category={{ cat.category }}"
-                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
-                <span class="capitalize">{{ cat.category }}</span>
-                <span class="text-xs text-gray-500 dark:text-gray-400">{{ cat.count }}</span>
-            </a>
-            {% endfor %}
+        <h2 class="text-lg font-semibold text-center mb-3">Recipes</h2>
+        <div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 overflow-hidden">
+            <table class="w-full">
+                <tbody>
+                    {% for cat in recipe_categories %}
+                    <tr class="border-b border-gray-100 dark:border-gray-800 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer transition-colors"
+                        onclick="window.location='/recipes?category={{ cat.category }}'">
+                        <td class="px-4 py-2.5 text-sm capitalize">{{ cat.category }}</td>
+                        <td class="px-4 py-2.5 text-sm text-gray-500 dark:text-gray-400 text-right">{{ cat.count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="/recipes" class="block text-center text-sm text-blue-600 dark:text-blue-400 hover:underline py-2.5 border-t border-gray-200 dark:border-gray-800">View all</a>
         </div>
     </div>
 
     <div>
-        <div class="flex items-center justify-between mb-4">
-            <h2 class="text-xl font-semibold">Tips</h2>
-            <a href="/tips" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">View all</a>
-        </div>
-        <div class="flex flex-wrap gap-2">
-            {% for cat in tip_categories %}
-            <a href="/tips?category={{ cat.category }}"
-                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
-                <span class="capitalize">{{ cat.category }}</span>
-                <span class="text-xs text-gray-500 dark:text-gray-400">{{ cat.count }}</span>
-            </a>
-            {% endfor %}
+        <h2 class="text-lg font-semibold text-center mb-3">Tips</h2>
+        <div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 overflow-hidden">
+            <table class="w-full">
+                <tbody>
+                    {% for cat in tip_categories %}
+                    <tr class="border-b border-gray-100 dark:border-gray-800 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer transition-colors"
+                        onclick="window.location='/tips?category={{ cat.category }}'">
+                        <td class="px-4 py-2.5 text-sm capitalize">{{ cat.category }}</td>
+                        <td class="px-4 py-2.5 text-sm text-gray-500 dark:text-gray-400 text-right">{{ cat.count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="/tips" class="block text-center text-sm text-blue-600 dark:text-blue-400 hover:underline py-2.5 border-t border-gray-200 dark:border-gray-800">View all</a>
         </div>
     </div>
 </div>
