@@ -3,7 +3,7 @@
 {% from "_macros.html" import highlight_star %}
 
 {% block content %}
-<div class="max-w-2xl mx-auto mb-12">
+<div class="max-w-2xl mx-auto mb-8">
     <h1 class="text-3xl font-bold text-center mb-3">Chatty Foods</h1>
     <p class="text-center text-sm text-gray-500 dark:text-gray-400 mb-6">Recipes and food tips collected from cooking conversations with AI.</p>
     <form action="/search" method="get">
@@ -22,7 +22,7 @@
     </form>
 </div>
 
-<div class="text-center mb-10">
+<div class="text-center mb-8">
     <p class="text-lg text-gray-600 dark:text-gray-400">
         <span class="font-semibold text-gray-900 dark:text-white">{{ recipe_count }}</span> Recipes
         <span class="mx-2">&middot;</span>
@@ -31,7 +31,7 @@
 </div>
 
 {% if highlighted_recipes or highlighted_tips %}
-<div class="mb-10">
+<div class="mb-8">
     <h2 class="text-lg font-semibold text-center mb-3 inline-flex items-center justify-center gap-1.5 w-full">{{ highlight_star("w-5 h-5") }} Highlights</h2>
     <div class="grid md:grid-cols-2 gap-8">
         {% if highlighted_recipes %}
