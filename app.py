@@ -21,11 +21,6 @@ app.permanent_session_lifetime = timedelta(days=30)
 
 API_TOKEN = os.environ.get("API_TOKEN", "")
 
-RECIPE_CATEGORIES = sorted([
-    "chicken", "seafood", "sushi", "dessert", "coffee", "sauce",
-    "breakfast", "side", "drink", "beef", "pork", "pasta",
-])
-TIP_CATEGORIES = sorted(["pairing", "storage", "substitution", "technique", "tip"])
 SOURCE_TYPES = [("ai", "AI"), ("personal", "Personal"), ("cookbook", "Cookbook")]
 
 
@@ -100,6 +95,62 @@ def login():
 def logout():
     session.clear()
     return redirect(url_for("index"))
+
+
+@app.route("/admin")
+@require_admin
+def admin():
+    return render_template("admin.html")
+
+
+@app.route("/admin/upload", methods=["POST"])
+@require_admin
+@check_csrf
+def admin_upload():
+    raw = request.form.get("json_data", "").strip()
+    if not raw:
+        return render_template("admin.html", upload_error="No JSON provided")
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        return render_template("admin.html", upload_error=f"Invalid JSON: {e}")
+
+    is_recipe = "ingredients" in data or "directions" in data
+    is_tip = "items" in data
+
+    valid_source_types = ("ai", "personal", "cookbook")
+    if "source_type" in data and data["source_type"] not in valid_source_types:
+        return render_template("admin.html", upload_error=f"Invalid source_type: must be one of {', '.join(valid_source_types)}")
+
+    if is_recipe and is_tip:
+        return render_template("admin.html", upload_error="Ambiguous: body has both recipe and tip fields")
+    if not is_recipe and not is_tip:
+        return render_template("admin.html", upload_error="Could not detect type: need 'ingredients'/'directions' for recipe or 'items' for tip")
+
+    if is_recipe:
+        missing = [f for f in ("title", "category", "ingredients", "directions") if f not in data]
+        if missing:
+            return render_template("admin.html", upload_error=f"Missing required fields: {', '.join(missing)}")
+        row_id = db.insert_recipe(data)
+        return render_template("admin.html", upload_success=f"Recipe created (id: {row_id})")
+    else:
+        missing = [f for f in ("title", "category", "items") if f not in data]
+        if missing:
+            return render_template("admin.html", upload_error=f"Missing required fields: {', '.join(missing)}")
+        row_id = db.insert_tip(data)
+        return render_template("admin.html", upload_success=f"Tip created (id: {row_id})")
+
+
+@app.route("/admin/export")
+@require_admin
+def admin_export():
+    recipes, tips = db.export_all()
+    data = json.dumps({"recipes": recipes, "tips": tips}, indent=2)
+    return app.response_class(
+        data,
+        mimetype="application/json",
+        headers={"Content-Disposition": "attachment; filename=chatty-foods-export.json"},
+    )
 
 
 # --- Page routes ---
@@ -232,12 +283,13 @@ def edit_recipe(recipe_id):
     if request.method == "GET":
         ingredients = json.loads(row["ingredients"]) if row["ingredients"] else []
         directions = json.loads(row["directions"]) if row["directions"] else []
+        all_categories = sorted(r["category"] for r in db.get_recipe_categories())
         return render_template(
             "edit_recipe.html",
             recipe=row,
             ingredients=ingredients,
             directions=directions,
-            recipe_categories=RECIPE_CATEGORIES,
+            recipe_categories=all_categories,
             source_types=SOURCE_TYPES,
         )
 
@@ -281,11 +333,12 @@ def edit_tip(tip_id):
 
     if request.method == "GET":
         items = json.loads(row["items"]) if row["items"] else []
+        all_categories = sorted(r["category"] for r in db.get_tip_categories())
         return render_template(
             "edit_tip.html",
             tip=row,
             items=items,
-            tip_categories=TIP_CATEGORIES,
+            tip_categories=all_categories,
             source_types=SOURCE_TYPES,
         )
 
