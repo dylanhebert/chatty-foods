@@ -7,8 +7,60 @@
     <h1 class="text-3xl font-bold mb-8">Admin</h1>
 
     <div class="space-y-8">
-        <!-- Upload JSON -->
+        <!-- Extraction Prompt -->
         <section>
+            <h2 class="text-lg font-semibold mb-3">Extraction Prompt</h2>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Paste this into an AI conversation to extract recipes and tips as JSON.</p>
+            <div class="relative">
+                <pre id="extraction-prompt" class="w-full px-3 py-2.5 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono text-xs leading-relaxed whitespace-pre-wrap overflow-x-auto max-h-64 overflow-y-auto">Extract every recipe and food tip from this conversation as JSON. Output each as its own code block so I can copy them one at a time.
+
+Recipe format:
+{
+  "title": "Descriptive recipe name",
+  "category": "chicken|seafood|sushi|dessert|coffee|sauce|breakfast|side|drink|beef|pork|pasta",
+  "prep_time": 5,
+  "cook_time": 25,
+  "portion_count": "4 servings",
+  "ingredients": [
+    {"name": "chicken thighs", "amount": "4"},
+    {"name": "soy sauce", "amount": "2 tbsp"}
+  ],
+  "directions": ["Step 1.", "Step 2."],
+  "notes": "Any extra tips or context.",
+  "source_type": "ai",
+  "source_conversation": "Brief_Conversation_Topic_YYYY-MM-DD"
+}
+
+Tip format:
+{
+  "title": "Descriptive tip name",
+  "category": "pairing|storage|substitution|technique|tip",
+  "items": [
+    {"name": "Item or technique name", "details": "Explanation or details"}
+  ],
+  "notes": "Any extra context.",
+  "source_type": "ai",
+  "source_conversation": "Brief_Conversation_Topic_YYYY-MM-DD"
+}
+
+- prep_time/cook_time: integers in minutes
+- portion_count: string — "4 servings", "12 cookies", "2 cups", etc.
+- ingredients.amount: string with quantity and unit — "2 tbsp", "1 lb", "4", "to taste"
+- source_conversation: short summary of conversation topic + today's date, shared across all items from the same conversation
+
+Rules: skip chit-chat — only extract actionable recipes and tips. Create a new category if nothing fits.</pre>
+                <button id="copy-prompt" type="button"
+                    class="absolute top-2 right-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                    title="Copy to clipboard">
+                    <svg id="copy-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    <svg id="check-icon" class="w-4 h-4 hidden text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span id="copy-label">Copy</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Upload JSON -->
+        <section class="pt-6 border-t border-gray-200 dark:border-gray-800">
             <h2 class="text-lg font-semibold mb-3">Upload JSON</h2>
             <form method="POST" action="/admin/upload">
                 <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
@@ -48,4 +100,22 @@
         </section>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('copy-prompt').addEventListener('click', function() {
+    var text = document.getElementById('extraction-prompt').textContent;
+    navigator.clipboard.writeText(text).then(function() {
+        document.getElementById('copy-icon').classList.add('hidden');
+        document.getElementById('check-icon').classList.remove('hidden');
+        document.getElementById('copy-label').textContent = 'Copied';
+        setTimeout(function() {
+            document.getElementById('copy-icon').classList.remove('hidden');
+            document.getElementById('check-icon').classList.add('hidden');
+            document.getElementById('copy-label').textContent = 'Copy';
+        }, 2000);
+    });
+});
+</script>
 {% endblock %}

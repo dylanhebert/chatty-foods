@@ -78,10 +78,54 @@ Authorization: Bearer <API_TOKEN>
 
 The token is set via the `API_TOKEN` environment variable (`.env` file locally, systemd service on the server).
 
+## Extraction Prompt
+
+Paste this at the end of a Claude cooking conversation to get copy-pasteable JSON for the admin upload page. This prompt is also available on the `/admin` page with a copy button.
+
+```
+Extract every recipe and food tip from this conversation as JSON. Output each as its own code block so I can copy them one at a time.
+
+Recipe format:
+{
+  "title": "Descriptive recipe name",
+  "category": "chicken|seafood|sushi|dessert|coffee|sauce|breakfast|side|drink|beef|pork|pasta",
+  "prep_time": 5,
+  "cook_time": 25,
+  "portion_count": "4 servings",
+  "ingredients": [
+    {"name": "chicken thighs", "amount": "4"},
+    {"name": "soy sauce", "amount": "2 tbsp"}
+  ],
+  "directions": ["Step 1.", "Step 2."],
+  "notes": "Any extra tips or context.",
+  "source_type": "ai",
+  "source_conversation": "Brief_Conversation_Topic_YYYY-MM-DD"
+}
+
+Tip format:
+{
+  "title": "Descriptive tip name",
+  "category": "pairing|storage|substitution|technique|tip",
+  "items": [
+    {"name": "Item or technique name", "details": "Explanation or details"}
+  ],
+  "notes": "Any extra context.",
+  "source_type": "ai",
+  "source_conversation": "Brief_Conversation_Topic_YYYY-MM-DD"
+}
+
+- prep_time/cook_time: integers in minutes
+- portion_count: string — "4 servings", "12 cookies", "2 cups", etc.
+- ingredients.amount: string with quantity and unit — "2 tbsp", "1 lb", "4", "to taste"
+- source_conversation: short summary of conversation topic + today's date, shared across all items from the same conversation
+
+Rules: skip chit-chat — only extract actionable recipes and tips. Create a new category if nothing fits.
+```
+
 <!-- Reference for humans, not instructions for Claude -->
 ## Workflow Reference
 
-1. **Cook** - Chat with Claude on mobile (Recipes project) while prepping/cooking
-2. **Sync** - Open the same conversation on Claude desktop (it syncs automatically)
-3. **Extract** - Copy the conversation, paste it into Claude Code in this repo, optionally add "extract recipes from this"
-4. **Review** - Claude uploads via the API and reports what was saved
+1. **Cook** - Chat with Claude on mobile while prepping/cooking
+2. **Extract** - Paste the extraction prompt above at the end of the conversation
+3. **Upload** - Copy each JSON block, go to `/admin`, paste into the upload textarea
+4. **Review** - Edit from the detail page if anything needs tweaking
