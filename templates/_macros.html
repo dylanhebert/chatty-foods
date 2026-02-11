@@ -13,3 +13,7 @@
 {% macro highlight_star(size="w-4 h-4") %}
 <svg class="{{ size }} shrink-0 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-label="Highlighted"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
 {% endmacro %}
+
+{% macro new_badge() %}
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase leading-none bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300">New</span>
+{% endmacro %}

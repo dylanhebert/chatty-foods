@@ -1,7 +1,7 @@
 import json
 import os
 import sqlite3
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "chatty_foods.db")
@@ -73,13 +73,13 @@ def get_recipes(category=None):
     conn = get_db()
     if category:
         rows = conn.execute(
-            "SELECT id, title, category, prep_time, cook_time, portion_count, source_type, highlight "
+            "SELECT id, title, category, prep_time, cook_time, portion_count, source_type, highlight, created_at "
             "FROM recipe_cards WHERE category = ? ORDER BY highlight DESC, title",
             (category,),
         ).fetchall()
     else:
         rows = conn.execute(
-            "SELECT id, title, category, prep_time, cook_time, portion_count, source_type, highlight "
+            "SELECT id, title, category, prep_time, cook_time, portion_count, source_type, highlight, created_at "
             "FROM recipe_cards ORDER BY highlight DESC, title"
         ).fetchall()
     conn.close()
@@ -99,13 +99,13 @@ def get_tips(category=None):
     conn = get_db()
     if category:
         rows = conn.execute(
-            "SELECT id, title, category, items, source_type, highlight FROM food_tips "
+            "SELECT id, title, category, items, source_type, highlight, created_at FROM food_tips "
             "WHERE category = ? ORDER BY highlight DESC, title",
             (category,),
         ).fetchall()
     else:
         rows = conn.execute(
-            "SELECT id, title, category, items, source_type, highlight FROM food_tips "
+            "SELECT id, title, category, items, source_type, highlight, created_at FROM food_tips "
             "ORDER BY highlight DESC, title"
         ).fetchall()
     conn.close()
@@ -144,7 +144,7 @@ def get_tip_categories():
 def get_highlighted_recipes():
     conn = get_db()
     rows = conn.execute(
-        "SELECT id, title, category FROM recipe_cards "
+        "SELECT id, title, category, created_at FROM recipe_cards "
         "WHERE highlight = 1 ORDER BY title"
     ).fetchall()
     conn.close()
@@ -154,8 +154,32 @@ def get_highlighted_recipes():
 def get_highlighted_tips():
     conn = get_db()
     rows = conn.execute(
-        "SELECT id, title, category FROM food_tips "
+        "SELECT id, title, category, created_at FROM food_tips "
         "WHERE highlight = 1 ORDER BY title"
+    ).fetchall()
+    conn.close()
+    return rows
+
+
+def get_recent_recipes(days=7):
+    conn = get_db()
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d %H:%M:%S")
+    rows = conn.execute(
+        "SELECT id, title, category, created_at FROM recipe_cards "
+        "WHERE created_at >= ? ORDER BY created_at DESC",
+        (cutoff,),
+    ).fetchall()
+    conn.close()
+    return rows
+
+
+def get_recent_tips(days=7):
+    conn = get_db()
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d %H:%M:%S")
+    rows = conn.execute(
+        "SELECT id, title, category, created_at FROM food_tips "
+        "WHERE created_at >= ? ORDER BY created_at DESC",
+        (cutoff,),
     ).fetchall()
     conn.close()
     return rows
@@ -332,13 +356,13 @@ def search(query):
     q = f"%{query}%"
     recipes = conn.execute(
         "SELECT id, title, category, prep_time, cook_time, portion_count, "
-        "ingredients, notes, source_type, highlight FROM recipe_cards "
+        "ingredients, notes, source_type, highlight, created_at FROM recipe_cards "
         "WHERE title LIKE ? OR ingredients LIKE ? OR notes LIKE ? "
         "ORDER BY highlight DESC, title",
         (q, q, q),
     ).fetchall()
     tips = conn.execute(
-        "SELECT id, title, category, items, notes, source_type, highlight FROM food_tips "
+        "SELECT id, title, category, items, notes, source_type, highlight, created_at FROM food_tips "
         "WHERE title LIKE ? OR items LIKE ? OR notes LIKE ? "
         "ORDER BY highlight DESC, title",
         (q, q, q),

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% from "_macros.html" import highlight_star %}
+{% from "_macros.html" import highlight_star, new_badge %}
 
 {% block content %}
 <div class="max-w-2xl mx-auto mb-8">
@@ -44,7 +44,7 @@
                         <tr class="border-b border-gray-100 dark:border-gray-800 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer transition-colors"
                             onclick="window.location='/recipes/{{ r.id }}'">
                             <td class="px-4 py-2.5 text-sm font-medium">
-                                <span class="inline-flex items-center gap-1.5">{{ highlight_star("w-3.5 h-3.5") }} {{ r.title }}</span>
+                                <span class="inline-flex items-center gap-1.5">{{ highlight_star("w-3.5 h-3.5") }} {{ r.title }}{% if is_new(r.created_at) %} {{ new_badge() }}{% endif %}</span>
                             </td>
                             <td class="px-4 py-2.5 text-right">
                                 <span class="inline-block px-2 py-0.5 rounded text-xs bg-gray-100 dark:bg-gray-800 capitalize">{{ r.category }}</span>
@@ -66,7 +66,59 @@
                         <tr class="border-b border-gray-100 dark:border-gray-800 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer transition-colors"
                             onclick="window.location='/tips/{{ t.id }}'">
                             <td class="px-4 py-2.5 text-sm font-medium">
-                                <span class="inline-flex items-center gap-1.5">{{ highlight_star("w-3.5 h-3.5") }} {{ t.title }}</span>
+                                <span class="inline-flex items-center gap-1.5">{{ highlight_star("w-3.5 h-3.5") }} {{ t.title }}{% if is_new(t.created_at) %} {{ new_badge() }}{% endif %}</span>
+                            </td>
+                            <td class="px-4 py-2.5 text-right">
+                                <span class="inline-block px-2 py-0.5 rounded text-xs bg-gray-100 dark:bg-gray-800 capitalize">{{ t.category }}</span>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% if recent_recipes or recent_tips %}
+<div class="mb-8">
+    <h2 class="text-lg font-semibold text-center mb-3">Recently Added</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+        {% if recent_recipes %}
+        <div>
+            <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">Recipes</h3>
+            <div class="bg-white dark:bg-gray-900 rounded-lg border border-violet-200 dark:border-violet-800/40 overflow-hidden">
+                <table class="w-full">
+                    <tbody>
+                        {% for r in recent_recipes %}
+                        <tr class="border-b border-gray-100 dark:border-gray-800 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer transition-colors"
+                            onclick="window.location='/recipes/{{ r.id }}'">
+                            <td class="px-4 py-2.5 text-sm font-medium">
+                                <span class="inline-flex items-center gap-1.5">{{ r.title }} {{ new_badge() }}</span>
+                            </td>
+                            <td class="px-4 py-2.5 text-right">
+                                <span class="inline-block px-2 py-0.5 rounded text-xs bg-gray-100 dark:bg-gray-800 capitalize">{{ r.category }}</span>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+        {% if recent_tips %}
+        <div>
+            <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">Tips</h3>
+            <div class="bg-white dark:bg-gray-900 rounded-lg border border-violet-200 dark:border-violet-800/40 overflow-hidden">
+                <table class="w-full">
+                    <tbody>
+                        {% for t in recent_tips %}
+                        <tr class="border-b border-gray-100 dark:border-gray-800 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer transition-colors"
+                            onclick="window.location='/tips/{{ t.id }}'">
+                            <td class="px-4 py-2.5 text-sm font-medium">
+                                <span class="inline-flex items-center gap-1.5">{{ t.title }} {{ new_badge() }}</span>
                             </td>
                             <td class="px-4 py-2.5 text-right">
                                 <span class="inline-block px-2 py-0.5 rounded text-xs bg-gray-100 dark:bg-gray-800 capitalize">{{ t.category }}</span>

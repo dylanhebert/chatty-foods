@@ -2,7 +2,7 @@ import hmac
 import json
 import os
 import secrets
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from functools import wraps
 
 from dotenv import load_dotenv
@@ -22,6 +22,21 @@ app.permanent_session_lifetime = timedelta(days=30)
 API_TOKEN = os.environ.get("API_TOKEN", "")
 
 SOURCE_TYPES = [("ai", "AI"), ("personal", "Personal"), ("cookbook", "Cookbook")]
+
+NEW_DAYS = 7
+
+
+def _is_new(created_at):
+    if not created_at:
+        return False
+    try:
+        dt = datetime.strptime(created_at, "%Y-%m-%d %H:%M:%S").replace(tzinfo=timezone.utc)
+        return (datetime.now(timezone.utc) - dt).days < NEW_DAYS
+    except ValueError:
+        return False
+
+
+app.jinja_env.globals["is_new"] = _is_new
 
 
 # --- Auth decorators ---
@@ -132,13 +147,19 @@ def admin_upload():
         if missing:
             return render_template("admin.html", upload_error=f"Missing required fields: {', '.join(missing)}")
         row_id = db.insert_recipe(data)
-        return render_template("admin.html", upload_success=f"Recipe created (id: {row_id})")
+        return render_template("admin.html", upload_success={
+            "message": f"Recipe created: {data['title']}",
+            "url": url_for("recipe", recipe_id=row_id),
+        })
     else:
         missing = [f for f in ("title", "category", "items") if f not in data]
         if missing:
             return render_template("admin.html", upload_error=f"Missing required fields: {', '.join(missing)}")
         row_id = db.insert_tip(data)
-        return render_template("admin.html", upload_success=f"Tip created (id: {row_id})")
+        return render_template("admin.html", upload_success={
+            "message": f"Tip created: {data['title']}",
+            "url": url_for("tip", tip_id=row_id),
+        })
 
 
 @app.route("/admin/export")
@@ -163,6 +184,8 @@ def index():
     tip_categories = db.get_tip_categories()
     highlighted_recipes = db.get_highlighted_recipes()
     highlighted_tips = db.get_highlighted_tips()
+    recent_recipes = db.get_recent_recipes(NEW_DAYS)
+    recent_tips = db.get_recent_tips(NEW_DAYS)
     return render_template(
         "index.html",
         recipe_count=recipe_count,
@@ -171,6 +194,8 @@ def index():
         tip_categories=tip_categories,
         highlighted_recipes=highlighted_recipes,
         highlighted_tips=highlighted_tips,
+        recent_recipes=recent_recipes,
+        recent_tips=recent_tips,
     )
 
 
@@ -228,6 +253,7 @@ def tips():
             "item_count": len(items),
             "source_type": row["source_type"] or "ai",
             "highlight": row["highlight"],
+            "created_at": row["created_at"],
         })
     return render_template(
         "tips.html",
