@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Edit: {{ tip.title }} - Chatty Foods{% endblock %}
+{% block title %}{{ 'New Tip' if mode == 'create' else 'Edit: ' + tip.title }} - Chatty Foods{% endblock %}
 {% block nav_tips %}!text-gray-900 dark:!text-white font-semibold{% endblock %}
 
 {% block content %}
 <div class="mb-4 flex items-center gap-3">
-    <a href="/tips/{{ tip.id }}" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm border border-gray-200 dark:border-gray-700 text-emerald-600 dark:text-emerald-400 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors">&larr; Cancel</a>
-    <h1 class="text-2xl font-bold">Edit Tip</h1>
+    <a href="{{ '/admin' if mode == 'create' else '/tips/' + tip.id|string }}" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm border border-gray-200 dark:border-gray-700 text-emerald-600 dark:text-emerald-400 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors">&larr; Cancel</a>
+    <h1 class="text-2xl font-bold">{{ 'New Tip' if mode == 'create' else 'Edit Tip' }}</h1>
 </div>
 
-<form method="POST" action="/tips/{{ tip.id }}/edit" class="space-y-6 max-w-3xl">
+<form method="POST" action="{{ '/tips/new' if mode == 'create' else '/tips/' + tip.id|string + '/edit' }}" class="space-y-6 max-w-3xl">
     <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
 
     <!-- Title -->
@@ -98,12 +98,13 @@
     <div class="flex items-center gap-3 pt-2">
         <button type="submit"
             class="px-6 py-2.5 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition-colors">
-            Save changes
+            {{ 'Create tip' if mode == 'create' else 'Save changes' }}
         </button>
-        <a href="/tips/{{ tip.id }}" class="px-4 py-2.5 rounded-lg text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Cancel</a>
+        <a href="{{ '/admin' if mode == 'create' else '/tips/' + tip.id|string }}" class="px-4 py-2.5 rounded-lg text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Cancel</a>
     </div>
 </form>
 
+{% if mode != 'create' %}
 <!-- Delete -->
 <form method="POST" action="/tips/{{ tip.id }}/delete" class="max-w-3xl mt-8 pt-6 border-t border-gray-200 dark:border-gray-800"
     onsubmit="return confirm('Delete this tip? This cannot be undone.')">
@@ -113,6 +114,7 @@
         Delete tip
     </button>
 </form>
+{% endif %}
 {% endblock %}
 
 {% block scripts %}

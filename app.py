@@ -295,6 +295,86 @@ def api_docs():
     return render_template("api.html")
 
 
+# --- Create routes ---
+
+
+@app.route("/recipes/new", methods=["GET", "POST"])
+@require_admin
+@check_csrf
+def new_recipe():
+    if request.method == "GET":
+        all_categories = sorted(r["category"] for r in db.get_recipe_categories())
+        return render_template(
+            "edit_recipe.html",
+            recipe={"title": "", "category": "", "prep_time": 0, "cook_time": 0, "portion_count": "", "notes": "", "source_type": "ai", "source_conversation": "", "highlight": 0},
+            ingredients=[],
+            directions=[],
+            recipe_categories=all_categories,
+            source_types=SOURCE_TYPES,
+            mode="create",
+        )
+
+    data = {
+        "title": request.form.get("title", "").strip(),
+        "category": request.form.get("category", ""),
+        "prep_time": int(request.form.get("prep_time") or 0),
+        "cook_time": int(request.form.get("cook_time") or 0),
+        "portion_count": request.form.get("portion_count", "").strip(),
+        "notes": request.form.get("notes", "").strip(),
+        "source_type": request.form.get("source_type", "ai"),
+        "source_conversation": request.form.get("source_conversation", "").strip(),
+        "highlight": 1 if request.form.get("highlight") else 0,
+    }
+
+    names = request.form.getlist("ingredient_name")
+    amounts = request.form.getlist("ingredient_amount")
+    data["ingredients"] = [
+        {"name": n.strip(), "amount": a.strip()}
+        for n, a in zip(names, amounts) if n.strip()
+    ]
+    data["directions"] = [
+        s.strip() for s in request.form.getlist("direction") if s.strip()
+    ]
+
+    row_id = db.insert_recipe(data)
+    return redirect(url_for("recipe", recipe_id=row_id))
+
+
+@app.route("/tips/new", methods=["GET", "POST"])
+@require_admin
+@check_csrf
+def new_tip():
+    if request.method == "GET":
+        all_categories = sorted(r["category"] for r in db.get_tip_categories())
+        return render_template(
+            "edit_tip.html",
+            tip={"title": "", "category": "", "notes": "", "source_type": "ai", "source_conversation": "", "highlight": 0},
+            items=[],
+            tip_categories=all_categories,
+            source_types=SOURCE_TYPES,
+            mode="create",
+        )
+
+    data = {
+        "title": request.form.get("title", "").strip(),
+        "category": request.form.get("category", ""),
+        "notes": request.form.get("notes", "").strip(),
+        "source_type": request.form.get("source_type", "ai"),
+        "source_conversation": request.form.get("source_conversation", "").strip(),
+        "highlight": 1 if request.form.get("highlight") else 0,
+    }
+
+    names = request.form.getlist("item_name")
+    details = request.form.getlist("item_details")
+    data["items"] = [
+        {"name": n.strip(), "details": d.strip()}
+        for n, d in zip(names, details) if n.strip()
+    ]
+
+    row_id = db.insert_tip(data)
+    return redirect(url_for("tip", tip_id=row_id))
+
+
 # --- Edit routes ---
 
 
