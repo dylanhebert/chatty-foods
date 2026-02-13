@@ -12,6 +12,7 @@ from flask import (
 )
 
 import db
+import discord
 
 load_dotenv()
 
@@ -147,6 +148,7 @@ def admin_upload():
         if missing:
             return render_template("admin.html", upload_error=f"Missing required fields: {', '.join(missing)}")
         row_id = db.insert_recipe(data)
+        discord.notify_new_recipe(data, row_id)
         return render_template("admin.html", upload_success={
             "message": f"Recipe created: {data['title']}",
             "url": url_for("recipe", recipe_id=row_id),
@@ -156,6 +158,7 @@ def admin_upload():
         if missing:
             return render_template("admin.html", upload_error=f"Missing required fields: {', '.join(missing)}")
         row_id = db.insert_tip(data)
+        discord.notify_new_tip(data, row_id)
         return render_template("admin.html", upload_success={
             "message": f"Tip created: {data['title']}",
             "url": url_for("tip", tip_id=row_id),
@@ -337,6 +340,7 @@ def new_recipe():
     ]
 
     row_id = db.insert_recipe(data)
+    discord.notify_new_recipe(data, row_id)
     return redirect(url_for("recipe", recipe_id=row_id))
 
 
@@ -372,6 +376,7 @@ def new_tip():
     ]
 
     row_id = db.insert_tip(data)
+    discord.notify_new_tip(data, row_id)
     return redirect(url_for("tip", tip_id=row_id))
 
 
@@ -545,12 +550,14 @@ def api_upload():
         if missing:
             return jsonify({"error": f"Missing required fields: {', '.join(missing)}"}), 400
         row_id = db.insert_recipe(data)
+        discord.notify_new_recipe(data, row_id)
         return jsonify({"type": "recipe", "id": row_id}), 201
     else:
         missing = [f for f in ("title", "category", "items") if f not in data]
         if missing:
             return jsonify({"error": f"Missing required fields: {', '.join(missing)}"}), 400
         row_id = db.insert_tip(data)
+        discord.notify_new_tip(data, row_id)
         return jsonify({"type": "tip", "id": row_id}), 201
 
 
