@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block title %}{{ recipe.title }} - Chatty Foods{% endblock %}
+{% block og_title %}{{ recipe.title }} - Chatty Foods{% endblock %}
+{% block twitter_title %}{{ recipe.title }} - Chatty Foods{% endblock %}
+{% block meta_description %}{{ recipe.title }}. {{ recipe.category | capitalize }} recipe from Chatty Foods.{% endblock %}
+{% block og_description %}{{ recipe.title }}. {{ recipe.category | capitalize }} recipe from Chatty Foods.{% endblock %}
+{% block twitter_description %}{{ recipe.title }}. {{ recipe.category | capitalize }} recipe from Chatty Foods.{% endblock %}
 {% block nav_recipes %}!text-gray-900 dark:!text-white font-semibold{% endblock %}
 
 {% from "_macros.html" import source_icon, source_label, highlight_star, new_badge %}

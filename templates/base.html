@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Chatty Foods{% endblock %}</title>
-    <meta name="description" content="Recipes and food tips collected from cooking conversations with AI.">
-    <meta property="og:title" content="Chatty Foods">
-    <meta property="og:description" content="Recipes and food tips collected from cooking conversations with AI.">
+    <meta name="description" content="{% block meta_description %}Recipes and food tips collected from cooking conversations with AI.{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Chatty Foods{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Recipes and food tips collected from cooking conversations with AI.{% endblock %}">
     <meta property="og:type" content="website">
     <!-- <meta property="og:image" content="{{ request.url_root }}static/og-image.png"> -->
     <meta name="twitter:card" content="summary">
     <!-- <meta name="twitter:image" content="{{ request.url_root }}static/og-image.png"> -->
-    <meta name="twitter:title" content="Chatty Foods">
-    <meta name="twitter:description" content="Recipes and food tips collected from cooking conversations with AI.">
+    <meta name="twitter:title" content="{% block twitter_title %}Chatty Foods{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Recipes and food tips collected from cooking conversations with AI.{% endblock %}">
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
     <meta name="theme-color" content="#10b981" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
