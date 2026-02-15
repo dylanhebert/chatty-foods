@@ -31,7 +31,7 @@ def notify_new_recipe(data, row_id):
         "embeds": [{
             "title": data.get("title", "Untitled"),
             "url": url,
-            "description": "New recipe added",
+            "description": "_**Recipe**_",
             "color": EMBED_COLOR,
             "fields": fields,
         }],
@@ -52,7 +52,7 @@ def notify_new_tip(data, row_id):
         "embeds": [{
             "title": data.get("title", "Untitled"),
             "url": url,
-            "description": "New food tip added",
+            "description": "_**Food Tip**_",
             "color": EMBED_COLOR,
             "fields": fields,
         }],
