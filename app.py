@@ -22,7 +22,7 @@ app.permanent_session_lifetime = timedelta(days=30)
 
 API_TOKEN = os.environ.get("API_TOKEN", "")
 
-SOURCE_TYPES = [("ai", "AI"), ("personal", "Personal"), ("cookbook", "Cookbook")]
+SOURCE_TYPES = [("ai", "AI"), ("personal", "Personal"), ("cookbook", "Cookbook"), ("online", "Online")]
 
 NEW_DAYS = 7
 
@@ -134,7 +134,7 @@ def admin_upload():
     is_recipe = "ingredients" in data or "directions" in data
     is_tip = "items" in data
 
-    valid_source_types = ("ai", "personal", "cookbook")
+    valid_source_types = ("ai", "personal", "cookbook", "online")
     if "source_type" in data and data["source_type"] not in valid_source_types:
         return render_template("admin.html", upload_error=f"Invalid source_type: must be one of {', '.join(valid_source_types)}")
 
@@ -536,7 +536,7 @@ def api_upload():
     is_tip = "items" in data
 
     # Validate source_type if provided
-    valid_source_types = ("ai", "personal", "cookbook")
+    valid_source_types = ("ai", "personal", "cookbook", "online")
     if "source_type" in data and data["source_type"] not in valid_source_types:
         return jsonify({"error": f"Invalid source_type: must be one of {', '.join(valid_source_types)}"}), 400
 

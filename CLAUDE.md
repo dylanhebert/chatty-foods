@@ -43,7 +43,7 @@ When a conversation is pasted from Claude mobile/desktop:
 - **prep_time/cook_time**: integers in minutes
 - **portion_count**: string (e.g., "4 servings", "24 cookies")
 - **source_conversation**: `<Brief_conversation_summary>_<YYYY-MM-DD>` - multiple recipes from the same conversation share this value
-- **source_type**: `ai` (from AI conversation, default), `personal` (own creation), `cookbook` (from a cookbook)
+- **source_type**: `ai` (from AI conversation, default), `personal` (own creation), `cookbook` (from a cookbook), `online` (from a website/online source)
 - **Recipe categories**: chicken, seafood, sushi, dessert, coffee, sauce, breakfast, side, drink, beef, pork, pasta (add new categories if needed)
 
 ## Uploading a Food Tip
