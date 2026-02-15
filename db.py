@@ -185,6 +185,22 @@ def get_recent_tips(days=7):
     return rows
 
 
+def get_by_conversation(source_conversation):
+    conn = get_db()
+    recipes = conn.execute(
+        "SELECT id, title, category, prep_time, cook_time, portion_count, source_type, highlight, created_at "
+        "FROM recipe_cards WHERE source_conversation = ? ORDER BY highlight DESC, title",
+        (source_conversation,),
+    ).fetchall()
+    tips = conn.execute(
+        "SELECT id, title, category, items, source_type, highlight, created_at "
+        "FROM food_tips WHERE source_conversation = ? ORDER BY highlight DESC, title",
+        (source_conversation,),
+    ).fetchall()
+    conn.close()
+    return recipes, tips
+
+
 def get_counts():
     conn = get_db()
     recipe_count = conn.execute("SELECT COUNT(*) FROM recipe_cards").fetchone()[0]

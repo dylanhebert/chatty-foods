@@ -277,6 +277,12 @@ def tip(tip_id):
     )
 
 
+@app.route("/conversation/<path:convo>")
+def conversation(convo):
+    recipes, tips = db.get_by_conversation(convo)
+    return render_template("conversation.html", conversation=convo, recipes=recipes, tips=tips)
+
+
 @app.route("/search")
 def search_results():
     query = request.args.get("q", "").strip()
